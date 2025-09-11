@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    align-items: stretch;
+}
+
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #000; 
+    height: auto; 
+}
+
+
+#page-content-wrapper {
+    width: 100%;
+    background-color: #f8f9fa;
+    min-height: 100%;
+}
+
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+
+
+.list-group-item {
+    border: none;
+    padding: 15px 20px;
+}
+
+.list-group-item:hover {
+    background-color: #343a40;
+}
+
+.sidebar-heading {
+    background-color: #111;
+    padding: 20px;
+}
+
+
+#menu-toggle {
+    font-size: 20px;
+}
+
+
+#content h1 {
+    font-weight: bold;
+}
+
+
+
+
+button {
+    min-width: 120px;
+}
+
+
+.progress {
+    height: 20px;
+}
+.progress-bar {
+    font-size: 14px;
+}
