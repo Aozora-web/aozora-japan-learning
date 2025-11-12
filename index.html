@@ -3,39 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belajar Bahasa Jepang</title>
+  <title>Aozora Japans</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
-  <div class="bg-dark text-white border-end" id="sidebar-wrapper">
+  <div class="bg-light border-end" id="sidebar-wrapper">
     <div class="sidebar-heading p-3 fs-4 fw-bold text-center">AOZORA</div>
     <div class="list-group list-group-flush">
-      <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="showContent('dashboard')">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-light" onclick="showContent('dashboard')">
         <i class="bi bi-speedometer2 me-2"></i> Dashboard
       </a>
-      <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="showContent('materi')">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-light" onclick="showContent('materi')">
         <i class="bi bi-book me-2"></i> Materi
       </a>
-      <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="showContent('latihan')">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-light" onclick="showContent('latihan')">
         <i class="bi bi-pencil-square me-2"></i> Latihan
       </a>
-      <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="showContent('tentang')">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-light" onclick="showContent('tentang')">
         <i class="bi bi-info-circle me-2"></i> Tentang
       </a>
     </div>
-
   </div>
-
-  <!-- Page Content -->
   <div id="page-content-wrapper">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div class="container-fluid">
         <button class="btn btn-dark" id="menu-toggle">☰</button>
-        
       </div>
     </nav>
 
@@ -51,6 +50,9 @@
   
   document.addEventListener("DOMContentLoaded", function() {
     showContent('dashboard');
+    
+    // Ini untuk menandai link aktif pertama kali
+    document.querySelector('.list-group-item').classList.add('active');
   });
 </script>
 </body>
