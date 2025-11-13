@@ -613,7 +613,7 @@ function showContent(page) {
                             <div class="tab-content" id="vocabTabContent">
                                 <div class="tab-pane fade show active" id="pekerjaan-pane" role="tabpanel" aria-labelledby="pekerjaan-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Pekerjaan</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Pekerjaan (しごと - Shigoto) -->
 <p>1. <b>いしゃ:</b> isha (dokter)</p>
 <p>2. <b>かいしゃいん:</b> kaishain (pegawai perusahaan)</p>
@@ -716,13 +716,13 @@ function showContent(page) {
 <p>99. <b>どうぶつえんのしょくいん:</b> doubutsuen no shokuin (petugas kebun binatang)</p>
 <p>100. <b>しごとをしているひと:</b> shigoto o shiteiru hito (pekerja)</p>
 
-                                    </div>
+                                   
                                 </div>
 
 
                                 <div class="tab-pane fade" id="sekolah-pane" role="tabpanel" aria-labelledby="sekolah-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Sekolah</h5>
-                                    <div class="vocab-list">
+                                    <hr>>
                                         <!-- Kosakata Bahasa Jepang Tentang Sekolah (がっこう - Gakkou) -->
 <p>1. <b>がっこう:</b> gakkou (sekolah)</p>
 <p>2. <b>せんせい:</b> sensei (guru)</p>
@@ -825,13 +825,13 @@ function showContent(page) {
 <p>99. <b>こうどう:</b> koudou (aula sekolah)</p>
 <p>100. <b>せんぱい:</b> senpai (kakak kelas / senior)</p>
 
-                                    </div>
+                                   
                                 </div>
 
 
                                 <div class="tab-pane fade" id="keluarga-pane" role="tabpanel" aria-labelledby="keluarga-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Keluarga</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Keluarga (かぞく - Kazoku) -->
 <p>1. <b>かぞく:</b> kazoku (keluarga)</p>
 <p>2. <b>りょうしん:</b> ryoushin (orang tua)</p>
@@ -934,13 +934,13 @@ function showContent(page) {
 <p>99. <b>そふぼとすごします:</b> sofubo to sugoshimasu (menghabiskan waktu dengan kakek-nenek)</p>
 <p>100. <b>かぞくあい:</b> kazoku ai (kasih sayang keluarga)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="binatang-pane" role="tabpanel" aria-labelledby="binatang-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Binatang</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Binatang (どうぶつ - Doubutsu) -->
 <p>1. <b>どうぶつ:</b> doubutsu (hewan / binatang)</p>
 <p>2. <b>ねこ:</b> neko (kucing)</p>
@@ -1043,13 +1043,13 @@ function showContent(page) {
 <p>99. <b>カエル:</b> kaeru (katak)</p>
 <p>100. <b>ペット:</b> petto (hewan peliharaan)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="makanan-pane" role="tabpanel" aria-labelledby="makanan-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Makanan</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                        <!-- Kosakata Bahasa Jepang Tentang Makanan (たべもの - Tabemono) -->
 <p>1. <b>たべもの:</b> tabemono (makanan)</p>
 <p>2. <b>ごはん:</b> gohan (nasi / makanan pokok)</p>
@@ -1152,13 +1152,13 @@ function showContent(page) {
 <p>99. <b>おやつ:</b> oyatsu (camilan)</p>
 <p>100. <b>りょうり:</b> ryouri (masakan / hidangan)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="warna-pane" role="tabpanel" aria-labelledby="warna-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Warna</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Warna (いろ - Iro) -->
 <p>1. <b>いろ:</b> iro (warna)</p>
 <p>2. <b>あか:</b> aka (merah)</p>
@@ -1261,13 +1261,13 @@ function showContent(page) {
 <p>99. <b>たいようのいろ:</b> taiyou no iro (warna matahari / oranye terang)</p>
 <p>100. <b>いろいろ:</b> iroiro (bermacam-macam warna)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="tempat-pane" role="tabpanel" aria-labelledby="tempat-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Tempat</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Tempat (ばしょ - Basho) -->
 <p>1. <b>ばしょ:</b> basho (tempat)</p>
 <p>2. <b>いえ / うち:</b> ie / uchi (rumah)</p>
@@ -1370,13 +1370,13 @@ function showContent(page) {
 <p>99. <b>じゅうたくち:</b> juutakuchi (daerah perumahan)</p>
 <p>100. <b>まちなか:</b> machi naka (pusat kota / tengah kota)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="alat-pane" role="tabpanel" aria-labelledby="alat-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Alat Rumah Tangga</h5>
-                                    <div class="vocab-list">
+                                   <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Alat Rumah Tangga (かぐ・どうぐ) -->
 <p>1. <b>かぐ:</b> kagu (perabot rumah)</p>
 <p>2. <b>いす:</b> isu (kursi)</p>
@@ -1479,13 +1479,12 @@ function showContent(page) {
 <p>99. <b>ざぶとん:</b> zabuton (bantal duduk Jepang)</p>
 <p>100. <b>こたつ:</b> kotatsu (meja berpemanas khas Jepang)</p>
 
-                                    </div>
                                 </div>
 
 
                                 <div class="tab-pane fade" id="pakaian-pane" role="tabpanel" aria-labelledby="pakaian-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Pakaian</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Pakaian (ふく - Fuku) -->
 <p>1. <b>ふく:</b> fuku (pakaian)</p>
 <p>2. <b>シャツ:</b> shatsu (kemeja)</p>
@@ -1588,13 +1587,13 @@ function showContent(page) {
 <p>99. <b>ゆったり:</b> yuttari (longgar / nyaman)</p>
 <p>100. <b>ぬの:</b> nuno (kain)</p>
 
-                                    </div>
+                                    <hr>
                                 </div>
 
 
                                 <div class="tab-pane fade" id="cuaca-pane" role="tabpanel" aria-labelledby="cuaca-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Cuaca & Musim</h5>
-                                    <div class="vocab-list">
+                                   <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Cuaca & Musim (てんき・きせつ) -->
 <p>1. <b>てんき:</b> tenki (cuaca)</p>
 <p>2. <b>はれ:</b> hare (cerah)</p>
@@ -1697,13 +1696,13 @@ function showContent(page) {
 <p>99. <b>そらがあかるい:</b> sora ga akarui (langit terang)</p>
 <p>100. <b>てんきがかわる:</b> tenki ga kawaru (cuaca berubah)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="tumbuhan-pane" role="tabpanel" aria-labelledby="tumbuhan-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Tumbuhan</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                        <!-- Kosakata Bahasa Jepang Tentang Tumbuhan (しょくぶつ) -->
 <p>1. <b>しょくぶつ:</b> shokubutsu (tumbuhan)</p>
 <p>2. <b>き:</b> ki (pohon)</p>
@@ -1806,13 +1805,13 @@ function showContent(page) {
 <p>99. <b>はながちる:</b> hana ga chiru (bunga gugur)</p>
 <p>100. <b>みのる:</b> minoru (berbuah / matang)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                  <div class="tab-pane fade" id="buah-pane" role="tabpanel" aria-labelledby="buah-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Buah-buahan & Sayuran</h5>
-                                    <div class="vocab-list">
+                                   <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Buah-buahan dan Sayuran (くだもの・やさい) -->
 <p>1. <b>くだもの:</b> kudamono (buah-buahan)</p>
 <p>2. <b>やさい:</b> yasai (sayuran)</p>
@@ -1915,12 +1914,12 @@ function showContent(page) {
 <p>99. <b>サラダ:</b> sarada (salad)</p>
 <p>100. <b>スムージー:</b> sumuujii (smoothie)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 <div class="tab-pane fade" id="bunga-pane" role="tabpanel" aria-labelledby="bunga-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Bunga</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Bunga (はな - Hana) -->
 <p>1. <b>はな:</b> hana (bunga)</p>
 <p>2. <b>さくら:</b> sakura (bunga sakura / cherry blossom)</p>
@@ -2023,13 +2022,13 @@ function showContent(page) {
 <p>99. <b>スズラン:</b> suzuran (lily of the valley)</p>
 <p>100. <b>ロ－ズ:</b> roo zu (mawar barat / rose)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
                                 <div class="tab-pane fade" id="transportasi-pane" role="tabpanel" aria-labelledby="transportasi-tab">
                                     <h5>Kosakata Bahasa Jepang Tentang Transportasi</h5>
-                                    <div class="vocab-list">
+                                    <hr>
                                         <!-- Kosakata Bahasa Jepang Tentang Transportasi (のりもの - Norimono) -->
 <p>1. <b>のりもの:</b> norimono (alat transportasi / kendaraan)</p>
 <p>2. <b>くるま:</b> kuruma (mobil)</p>
@@ -2132,7 +2131,7 @@ function showContent(page) {
 <p>99. <b>スピード:</b> supiido (kecepatan)</p>
 <p>100. <b>シグナル:</b> shigunaru (sinyal / lampu lalu lintas)</p>
 
-                                    </div>
+                                    
                                 </div>
 
 
