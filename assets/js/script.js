@@ -2553,9 +2553,46 @@ function showContent(page) {
   <p>近 : chikai (dekat)</p>
   <p>遠 : tooi (jauh)</p>
 </div>
-
+</div>
                             </div>
                     </div>
+
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <h3><b>5. 🌸 Kalimat Sehari - hari</b></h3>
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionMateri">
+                        <div class="accordion-body">
+                            
+                            <p class="text-center text-muted">Pilih kategori kalimat yang ingin Anda pelajari:</p>
+                            
+                            <div class="d-grid gap-3 col-md-8 mx-auto" id="daily-sentence-menu">
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('salam', this)">1. Salam </button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('umum', this)">2. Ungkapan Umum</button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('perkenalan', this)">3. Perkenalan Diri</button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('pertanyaan', this)">4. Pertanyaan Umum</button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('frasa', this)">5. Frasa Bermanfaat </button>
+
+                                 <button class="btn btn-sakura-main" onclick="showDailySentence('emosi', this)">6. Ekspresi Emosi</button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('sopan', this)">7. Kata Sopan & Formalitas </button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('kegiatan', this)">8. Kegiatan Sehari-hari</button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('situasi', this)">9. Situasi Makan </button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('belanja', this)">10. Belanja & Uang </button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('perjalanan', this)">11. Perjalanan </button>
+                                <button class="btn btn-sakura-main" onclick="showDailySentence('kesehatan', this)">12. Kesehatan </button>
+                            </div>
+
+                            <hr class="my-4" style="color: var(--sakura-light);">
+                            
+                            <div id="daily-sentence-content" class="vocab-list" style="display: none;">
+                                </div>
+
+                        
+                    </div>
+                </div>
+                </div>
                 </div>
             </div>
         `;
@@ -2607,6 +2644,1173 @@ function showContent(page) {
         `;
     }
     }
+    // FUNGSI BARU UNTUK MENAMPILKAN MATERI KALIMAT SEHARI-HARI
+function showDailySentence(category, element) {
+    const contentDiv = document.getElementById('daily-sentence-content');
+    let htmlContent = '';
+
+    // 1. Hapus kelas 'active' dari semua tombol di menu ini
+    document.querySelectorAll('#daily-sentence-menu .btn-sakura-main').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // 2. Tambahkan kelas 'active' ke tombol yang diklik
+    if (element) {
+        element.classList.add('active');
+    }
+
+    // 3. Atur konten HTML berdasarkan kategori yang dipilih
+    switch (category) {
+        case 'salam':
+    htmlContent = `
+        <h5><b>1. Salam (挨拶 - Aisatsu)</b></h5>
+        <hr>
+        <p><b>おはようございます (Ohayou gozaimasu)</b> - Selamat pagi (formal)</p>
+        <p><b>おはよう (Ohayou)</b> - Selamat pagi (informal)</p>
+        <p><b>こんにちは (Konnichiwa)</b> - Selamat siang / Halo</p>
+        <p><b>こんばんは (Konbanwa)</b> - Selamat malam (sapaan saat bertemu)</p>
+        <p><b>さようなら (Sayounara)</b> - Selamat tinggal (untuk perpisahan lama)</p>
+        <p><b>じゃあね (Jaa ne)</b> - Sampai jumpa (informal)</p>
+        <p><b>またね (Mata ne)</b> - Sampai nanti / Sampai jumpa lagi</p>
+        <p><b>またあした (Mata ashita)</b> - Sampai besok</p>
+        <p><b>おやすみなさい (Oyasuminasai)</b> - Selamat tidur (formal)</p>
+        <p><b>おやすみ (Oyasumi)</b> - Selamat tidur (informal)</p>
+        <p><b>はじめまして (Hajimemashite)</b> - Salam kenal</p>
+        <p><b>どうぞよろしく (Douzo yoroshiku)</b> - Senang berkenalan</p>
+        <p><b>ごきげんよう (Gokigenyou)</b> - Semoga harimu menyenangkan (formal)</p>
+        <p><b>いってきます (Ittekimasu)</b> - Saya pergi dulu</p>
+        <p><b>いってらっしゃい (Itterasshai)</b> - Hati-hati di jalan (respon untuk ittekimasu)</p>
+        <p><b>ただいま (Tadaima)</b> - Aku pulang</p>
+        <p><b>おかえりなさい (Okaerinasai)</b> - Selamat datang kembali</p>
+        <p><b>ようこそ (Youkoso)</b> - Selamat datang</p>
+        <p><b>おめでとうございます (Omedetou gozaimasu)</b> - Selamat (formal)</p>
+        <p><b>おめでとう (Omedetou)</b> - Selamat (informal)</p>
+        <p><b>あけましておめでとうございます (Akemashite omedetou gozaimasu)</b> - Selamat tahun baru</p>
+        <p><b>おたんじょうびおめでとう (Otanjoubi omedetou)</b> - Selamat ulang tahun</p>
+        <p><b>めりーくりすます (Merii Kurisumasu)</b> - Selamat Natal</p>
+        <p><b>あけおめ (Akeome)</b> - Tahun baru, slang (singkatan informal)</p>
+        <p><b>ことよろ (Kotoyoro)</b> - Semoga tahun ini baik juga (singkatan dari kotoshi mo yoroshiku)</p>
+        <p><b>はっぴーばれんたいん (Happii Barentain)</b> - Selamat Hari Valentine</p>
+        <p><b>おつかれさまです (Otsukaresama desu)</b> - Terima kasih atas kerja kerasnya (formal)</p>
+        <p><b>おつかれ (Otsukare)</b> - Kerja bagus (informal)</p>
+        <p><b>おじゃまします (Ojama shimasu)</b> - Permisi masuk</p>
+        <p><b>しつれいします (Shitsurei shimasu)</b> - Permisi / Maaf (sopan)</p>
+        <p><b>ひさしぶり (Hisashiburi)</b> - Lama tidak bertemu</p>
+        <p><b>おひさしぶりです (Ohisashiburi desu)</b> - Lama tak berjumpa (lebih sopan)</p>
+        <p><b>げんきですか (Genki desu ka)</b> - Apa kabar?</p>
+        <p><b>はい、げんきです (Hai, genki desu)</b> - Ya, saya baik</p>
+        <p><b>まあまあです (Maa maa desu)</b> - Biasa saja</p>
+        <p><b>さいこうです (Saikou desu)</b> - Luar biasa</p>
+        <p><b>はじめましょう (Hajimemashou)</b> - Mari kita mulai</p>
+        <p><b>おつかれさまでした (Otsukaresama deshita)</b> - Terima kasih atas kerja keras (selesai)</p>
+        <p><b>またあいましょう (Mata aimashou)</b> - Sampai bertemu lagi</p>
+        <p><b>きおつけて (Ki o tsukete)</b> - Hati-hati ya</p>
+        <p><b>おだいじに (Odaiji ni)</b> - Semoga lekas sembuh</p>
+        <p><b>ごめんなさい (Gomennasai)</b> - Maaf</p>
+        <p><b>すみません (Sumimasen)</b> - Maaf / Permisi</p>
+        <p><b>ありがとう (Arigatou)</b> - Terima kasih</p>
+        <p><b>ありがとうございます (Arigatou gozaimasu)</b> - Terima kasih banyak (formal)</p>
+        <p><b>どうも (Doumo)</b> - Terima kasih (sangat singkat)</p>
+        <p><b>どうもありがとう (Doumo arigatou)</b> - Terima kasih banyak (lebih hangat)</p>
+        <p><b>またこんど (Mata kondo)</b> - Lain kali ya</p>
+        <p><b>おめにかかれてうれしいです (O-me ni kakarete ureshii desu)</b> - Senang bisa bertemu Anda</p>
+        <p><b>おあいできてうれしいです (O-ai dekite ureshii desu)</b> - Senang bisa berkenalan</p>
+        <p><b>ごぶさたしています (Gobusata shiteimasu)</b> - Sudah lama tidak menghubungi</p>
+        <p><b>じゃ、またあした (Ja, mata ashita)</b> - Oke, sampai besok</p>
+        <p><b>では、また (Dewa, mata)</b> - Kalau begitu, sampai nanti</p>
+        <p><b>またおあいしましょう (Mata o-ai shimashou)</b> - Mari bertemu lagi</p>
+        <p><b>よいしゅうまつを (Yoi shuumatsu o)</b> - Selamat akhir pekan</p>
+        <p><b>よい一日を (Yoi ichinichi o)</b> - Selamat beraktivitas / Semoga harimu baik</p>
+        <p><b>おげんきで (Ogenki de)</b> - Jaga kesehatan ya</p>
+        <p><b>いらっしゃいませ (Irasshaimase)</b> - Selamat datang (ucapan toko / restoran)</p>
+        <p><b>おきゃくさま、ようこそ (Okyakusama, youkoso)</b> - Selamat datang, Tuan/Nyonya tamu</p>
+        <p><b>よくきてくれました (Yoku kite kuremashita)</b> - Terima kasih sudah datang</p>
+        <p><b>またきてください (Mata kite kudasai)</b> - Datanglah lagi ya</p>
+        <p><b>いってまいります (Itte mairimasu)</b> - Saya pamit pergi (lebih sopan dari ittekimasu)</p>
+        <p><b>おかえり (Okaeri)</b> - Selamat datang (informal)</p>
+        <p><b>ごぶさたでした (Gobusata deshita)</b> - Sudah lama tidak bertemu (kasual)</p>
+        <p><b>おひるごはんたべた？ (Ohiru gohan tabeta?)</b> - Sudah makan siang? (akrab)</p>
+        <p><b>こんばんは、いいゆうがたですね (Konbanwa, ii yuugata desu ne)</b> - Selamat malam, sore yang indah ya</p>
+        <p><b>どうもどうも (Doumo doumo)</b> - Hai, halo (santai)</p>
+        <p><b>ひさしぶりだね (Hisashiburi da ne)</b> - Lama gak ketemu ya</p>
+        <p><b>またれんらくします (Mata renraku shimasu)</b> - Nanti saya hubungi lagi</p>
+        <p><b>こちらこそ (Kochira koso)</b> - Sama-sama / Justru saya yang senang</p>
+        <p><b>では、またらいしゅう (Dewa, mata raishuu)</b> - Sampai minggu depan</p>
+        <p><b>よいゆめを (Yoi yume o)</b> - Semoga mimpi indah</p>
+        <p><b>おねがいします (Onegaishimasu)</b> - Mohon bantuannya</p>
+        <p><b>よろしくね (Yoroshiku ne)</b> - Tolong ya (informal)</p>
+        <p><b>こちらへどうぞ (Kochira e douzo)</b> - Silakan ke sini</p>
+        <p><b>はいどうぞ (Hai, douzo)</b> - Silakan</p>
+        <p><b>おまちください (Omachi kudasai)</b> - Mohon tunggu sebentar</p>
+        <p><b>ちょっとまってください (Chotto matte kudasai)</b> - Tolong tunggu sebentar</p>
+        <p><b>おまたせしました (Omatase shimashita)</b> - Maaf membuat Anda menunggu</p>
+        <p><b>おひさまがでてきましたね (Ohisama ga detekimashita ne)</b> - Mataharinya sudah muncul ya</p>
+        <p><b>いいてんきですね (Ii tenki desu ne)</b> - Cuacanya bagus ya</p>
+        <p><b>またおあいしたいです (Mata o-ai shitai desu)</b> - Saya ingin bertemu lagi</p>
+        <p><b>おだいじに (Odaiji ni)</b> - Jaga kesehatan</p>
+        <p><b>きをつけてください (Ki o tsukete kudasai)</b> - Hati-hati ya</p>
+        <p><b>じゃ、またあとで (Ja, mata ato de)</b> - Sampai nanti</p>
+        <p><b>またでんわします (Mata denwa shimasu)</b> - Nanti saya telepon lagi</p>
+        <p><b>ごあいさつがおくれました (Go aisatsu ga okuremashita)</b> - Maaf baru sempat menyapa</p>
+        <p><b>どうぞおげんきで (Douzo ogenki de)</b> - Semoga sehat selalu</p>
+    `;
+    break;
+
+    case 'umum':
+        htmlContent = `
+            <h5><b>2. Ungkapan Umum (日常表現 - Nichijou Hyougen)</b></h5>
+            <hr>
+            <p><b>はい (Hai)</b> - Ya</p>
+            <p><b>いいえ (Iie)</b> - Tidak</p>
+            <p><b>そうです (Sou desu)</b> - Betul / Benar</p>
+            <p><b>ちがいます (Chigaimasu)</b> - Salah / Bukan</p>
+            <p><b>わかります (Wakarimasu)</b> - Saya mengerti</p>
+            <p><b>わかりません (Wakarimasen)</b> - Saya tidak mengerti</p>
+            <p><b>もういちどおねがいします (Mou ichido onegaishimasu)</b> - Tolong ulangi sekali lagi</p>
+            <p><b>ゆっくりいってください (Yukkuri itte kudasai)</b> - Tolong ucapkan perlahan</p>
+            <p><b>なんですか (Nan desu ka)</b> - Apa itu?</p>
+            <p><b>どうしましたか (Dou shimashita ka)</b> - Ada apa? / Kenapa?</p>
+            <p><b>だいじょうぶです (Daijoubu desu)</b> - Tidak apa-apa</p>
+            <p><b>すごい (Sugoi)</b> - Hebat!</p>
+            <p><b>かわいい (Kawaii)</b> - Lucu / Imut</p>
+            <p><b>かっこいい (Kakkoii)</b> - Keren</p>
+            <p><b>きれい (Kirei)</b> - Cantik / Bersih</p>
+            <p><b>うるさい (Urusai)</b> - Berisik!</p>
+            <p><b>だめ (Dame)</b> - Tidak boleh / Jangan</p>
+            <p><b>いいね (Ii ne)</b> - Bagus ya / Setuju</p>
+            <p><b>ほんとう？ (Hontou?)</b> - Benarkah?</p>
+            <p><b>まじで？ (Majide?)</b> - Serius?</p>
+            <p><b>すごいですね (Sugoi desu ne)</b> - Luar biasa ya</p>
+            <p><b>いいですね (Ii desu ne)</b> - Bagus ya</p>
+            <p><b>どうぞ (Douzo)</b> - Silakan</p>
+            <p><b>どういたしまして (Dou itashimashite)</b> - Sama-sama</p>
+            <p><b>ちょっとまって (Chotto matte)</b> - Tunggu sebentar</p>
+            <p><b>ほんとうにありがとう (Hontou ni arigatou)</b> - Terima kasih banyak</p>
+            <p><b>ぜったいに (Zettai ni)</b> - Pasti / Tentu saja</p>
+            <p><b>もちろん (Mochiron)</b> - Tentu / Tentu saja</p>
+            <p><b>だいじょうぶ？ (Daijoubu?)</b> - Kamu baik-baik saja?</p>
+            <p><b>ちょっと (Chotto)</b> - Sebentar / Agak / Sedikit</p>
+            <p><b>なんでもない (Nandemo nai)</b> - Tidak ada apa-apa</p>
+            <p><b>たぶん (Tabun)</b> - Mungkin</p>
+            <p><b>ほんとうに (Hontou ni)</b> - Benar-benar</p>
+            <p><b>うそ！ (Uso!)</b> - Bohong! / Serius?!</p>
+            <p><b>いいかんがえですね (Ii kangae desu ne)</b> - Ide yang bagus</p>
+            <p><b>がんばって！ (Ganbatte!)</b> - Semangat!</p>
+            <p><b>きをつけて！ (Ki o tsukete!)</b> - Hati-hati!</p>
+            <p><b>きをつけてね (Ki o tsukete ne)</b> - Hati-hati ya</p>
+            <p><b>しんぱいしないで (Shinpai shinaide)</b> - Jangan khawatir</p>
+            <p><b>おねがい (Onegai)</b> - Tolong</p>
+            <p><b>おねがいします (Onegaishimasu)</b> - Mohon bantuannya</p>
+            <p><b>すごくたのしかった (Sugoku tanoshikatta)</b> - Sangat menyenangkan</p>
+            <p><b>たのしい (Tanoshii)</b> - Menyenangkan</p>
+            <p><b>うれしい (Ureshii)</b> - Senang</p>
+            <p><b>かなしい (Kanashii)</b> - Sedih</p>
+            <p><b>こわい (Kowai)</b> - Menakutkan</p>
+            <p><b>つかれた (Tsukareta)</b> - Capek</p>
+            <p><b>おなかすいた (Onaka suita)</b> - Lapar</p>
+            <p><b>のどがかわいた (Nodo ga kawaita)</b> - Haus</p>
+            <p><b>ねむい (Nemui)</b> - Mengantuk</p>
+            <p><b>いたい (Itai)</b> - Sakit / Nyeri</p>
+            <p><b>だいじょうぶですか (Daijoubu desu ka)</b> - Kamu tidak apa-apa?</p>
+            <p><b>おげんきですか (Ogenki desu ka)</b> - Apa kabar?</p>
+            <p><b>はじめましょう (Hajimemashou)</b> - Mari kita mulai</p>
+            <p><b>おわりました (Owarimashita)</b> - Sudah selesai</p>
+            <p><b>つぎはなんですか (Tsugi wa nan desu ka)</b> - Selanjutnya apa?</p>
+            <p><b>いいですよ (Ii desu yo)</b> - Tidak apa / Silakan</p>
+            <p><b>だめですよ (Dame desu yo)</b> - Tidak boleh ya</p>
+            <p><b>ほんとうですか (Hontou desu ka)</b> - Benarkah?</p>
+            <p><b>まって！ (Matte!)</b> - Tunggu!</p>
+            <p><b>いそいで！ (Isoide!)</b> - Cepat!</p>
+            <p><b>はやく！ (Hayaku!)</b> - Cepatlah!</p>
+            <p><b>すぐいきます (Sugu ikimasu)</b> - Saya segera pergi</p>
+            <p><b>ちょっといそがしいです (Chotto isogashii desu)</b> - Saya agak sibuk</p>
+            <p><b>ひまだよ (Hima da yo)</b> - Aku lagi senggang</p>
+            <p><b>どうしたの？ (Doushita no?)</b> - Ada apa?</p>
+            <p><b>なんでもないよ (Nandemo nai yo)</b> - Tidak apa-apa kok</p>
+            <p><b>まってて (Mattete)</b> - Tunggu ya</p>
+            <p><b>だれ？ (Dare?)</b> - Siapa?</p>
+            <p><b>どこ？ (Doko?)</b> - Di mana?</p>
+            <p><b>いつ？ (Itsu?)</b> - Kapan?</p>
+            <p><b>なんで？ (Nande?)</b> - Kenapa?</p>
+            <p><b>どうやって？ (Dou yatte?)</b> - Bagaimana caranya?</p>
+            <p><b>すごくいいね (Sugoku ii ne)</b> - Bagus banget!</p>
+            <p><b>わたしもしりたい (Watashi mo shiritai)</b> - Aku juga ingin tahu</p>
+            <p><b>つかれたね (Tsukareta ne)</b> - Capek ya</p>
+            <p><b>がんばろう！ (Ganbarou!)</b> - Ayo semangat!</p>
+            <p><b>いいかんじ！ (Ii kanji!)</b> - Keren juga!</p>
+            <p><b>もういい (Mou ii)</b> - Sudah cukup / Sudahlah</p>
+            <p><b>まだまだ (Mada mada)</b> - Belum / Masih jauh</p>
+            <p><b>やった！ (Yatta!)</b> - Aku berhasil!</p>
+            <p><b>すごいね (Sugoi ne)</b> - Hebat ya</p>
+            <p><b>びっくりした (Bikkuri shita)</b> - Kaget!</p>
+            <p><b>こまったな (Komatta na)</b> - Wah, repot juga</p>
+            <p><b>どうしよう (Doushiyou)</b> - Gimana ya?</p>
+            <p><b>それでいいよ (Sore de ii yo)</b> - Oke, gitu aja</p>
+            <p><b>そうしましょう (Sou shimashou)</b> - Mari lakukan itu</p>
+            <p><b>だいすき (Daisuki)</b> - Aku sangat suka</p>
+            <p><b>きらい (Kirai)</b> - Tidak suka / Benci</p>
+            <p><b>なるほど (Naruhodo)</b> - Oh, begitu</p>
+            <p><b>すごいことだね (Sugoi koto da ne)</b> - Hal yang luar biasa ya</p>
+            <p><b>いいえ、けっこうです (Iie, kekkou desu)</b> - Tidak, terima kasih</p>
+            <p><b>おいしい！ (Oishii!)</b> - Enak!</p>
+            <p><b>まずい (Mazui)</b> - Tidak enak</p>
+            <p><b>おなかいっぱい (Onaka ippai)</b> - Kenyang</p>
+            <p><b>はらへった (Hara hetta)</b> - Lapar banget (kasual)</p>
+            <p><b>やばい！ (Yabai!)</b> - Wah gawat! / Keren juga! (slang)</p>
+        `;
+        break;
+    
+        case 'perkenalan':
+    htmlContent = `
+        <h5><b>3. Perkenalan Diri (自己紹介 - Jiko Shoukai)</b></h5>
+        <hr>
+        <p><b>はじめまして (Hajimemashite)</b> - Salam kenal</p>
+        <p><b>わたしは...です (Watashi wa ... desu)</b> - Saya adalah ...</p>
+        <p><b>ぼくは...です (Boku wa ... desu)</b> - Aku adalah ... (untuk laki-laki)</p>
+        <p><b>わたしのなまえは...です (Watashi no namae wa ... desu)</b> - Nama saya ...</p>
+        <p><b>よろしくおねがいします (Yoroshiku onegaishimasu)</b> - Mohon bimbingannya / Senang berkenalan</p>
+        <p><b>どこからきましたか (Doko kara kimashita ka)</b> - Anda dari mana?</p>
+        <p><b>...からきました (... kara kimashita)</b> - Saya dari ...</p>
+        <p><b>なんさいですか (Nansai desu ka)</b> - Umur berapa?</p>
+        <p><b>わたしは...さいです (Watashi wa ... sai desu)</b> - Saya berumur ... tahun</p>
+        <p><b>しゅっしんはどこですか (Shusshin wa doko desu ka)</b> - Asalnya dari mana?</p>
+        <p><b>いま...にすんでいます (Ima ... ni sundeimasu)</b> - Sekarang saya tinggal di ...</p>
+        <p><b>しごとはなんですか (Shigoto wa nan desu ka)</b> - Pekerjaan Anda apa?</p>
+        <p><b>がくせいです (Gakusei desu)</b> - Saya seorang pelajar</p>
+        <p><b>せんせいです (Sensei desu)</b> - Saya seorang guru</p>
+        <p><b>かいしゃいんです (Kaishain desu)</b> - Saya pegawai kantor</p>
+        <p><b>エンジニアです (Enjinia desu)</b> - Saya insinyur</p>
+        <p><b>しゅみはなんですか (Shumi wa nan desu ka)</b> - Apa hobi Anda?</p>
+        <p><b>しゅみは...です (Shumi wa ... desu)</b> - Hobi saya adalah ...</p>
+        <p><b>どこにすんでいますか (Doko ni sundeimasu ka)</b> - Anda tinggal di mana?</p>
+        <p><b>いまなんねんせいですか (Ima nannensei desu ka)</b> - Sekarang kelas berapa?</p>
+        <p><b>なにをべんきょうしていますか (Nani o benkyou shiteimasu ka)</b> - Anda belajar apa?</p>
+        <p><b>...をべんきょうしています (... o benkyou shiteimasu)</b> - Saya belajar ...</p>
+        <p><b>どんなスポーツがすきですか (Donna supootsu ga suki desu ka)</b> - Olahraga apa yang kamu suka?</p>
+        <p><b>...がすきです (... ga suki desu)</b> - Saya suka ...</p>
+        <p><b>どんなたべものがすきですか (Donna tabemono ga suki desu ka)</b> - Makanan apa yang kamu suka?</p>
+        <p><b>にほんごをべんきょうしています (Nihongo o benkyou shiteimasu)</b> - Saya belajar bahasa Jepang</p>
+        <p><b>にほんごがすこしわかります (Nihongo ga sukoshi wakarimasu)</b> - Saya mengerti sedikit bahasa Jepang</p>
+        <p><b>にほんごがはなせます (Nihongo ga hanasemasu)</b> - Saya bisa bicara bahasa Jepang</p>
+        <p><b>にほんにきたのははじめてです (Nihon ni kita no wa hajimete desu)</b> - Ini pertama kali saya ke Jepang</p>
+        <p><b>どのくらいにほんごをべんきょうしていますか (Dono kurai Nihongo o benkyou shiteimasu ka)</b> - Sudah berapa lama belajar bahasa Jepang?</p>
+        <p><b>...ねんかんべんきょうしています (... nenkan benkyou shiteimasu)</b> - Saya sudah belajar ... tahun</p>
+        <p><b>どうしてにほんごをべんきょうしていますか (Doushite Nihongo o benkyou shiteimasu ka)</b> - Kenapa belajar bahasa Jepang?</p>
+        <p><b>にほんのぶんかがすきです (Nihon no bunka ga suki desu)</b> - Saya suka budaya Jepang</p>
+        <p><b>アニメがすきです (Anime ga suki desu)</b> - Saya suka anime</p>
+        <p><b>まんががすきです (Manga ga suki desu)</b> - Saya suka manga</p>
+        <p><b>どうぞよろしくおねがいします (Douzo yoroshiku onegaishimasu)</b> - Senang berkenalan dengan Anda</p>
+        <p><b>でんわばんごうはなんですか (Denwa bangou wa nan desu ka)</b> - Nomor telepon Anda berapa?</p>
+        <p><b>メールアドレスはなんですか (Meeru adoresu wa nan desu ka)</b> - Apa alamat email Anda?</p>
+        <p><b>にほんにすんでいます (Nihon ni sundeimasu)</b> - Saya tinggal di Jepang</p>
+        <p><b>にほんがすきです (Nihon ga suki desu)</b> - Saya suka Jepang</p>
+        <p><b>どのくにのひとですか (Dono kuni no hito desu ka)</b> - Anda berasal dari negara mana?</p>
+        <p><b>インドネシアじんです (Indonesia jin desu)</b> - Saya orang Indonesia</p>
+        <p><b>どこではたらいていますか (Doko de hataraiteimasu ka)</b> - Anda bekerja di mana?</p>
+        <p><b>こうこうせいです (Koukousei desu)</b> - Saya siswa SMA</p>
+        <p><b>だいがくせいです (Daigakusei desu)</b> - Saya mahasiswa</p>
+        <p><b>なんのしごとをしていますか (Nan no shigoto o shiteimasu ka)</b> - Apa pekerjaan Anda?</p>
+        <p><b>プログラマーです (Puroguramaa desu)</b> - Saya seorang programmer</p>
+        <p><b>けっこんしています (Kekkon shiteimasu)</b> - Saya sudah menikah</p>
+        <p><b>どくしんです (Dokushin desu)</b> - Saya belum menikah</p>
+        <p><b>こどもがいます (Kodomo ga imasu)</b> - Saya punya anak</p>
+        <p><b>いもうとがいます (Imouto ga imasu)</b> - Saya punya adik perempuan</p>
+        <p><b>おとうとがいます (Otouto ga imasu)</b> - Saya punya adik laki-laki</p>
+        <p><b>おにいさんがいます (Oniisan ga imasu)</b> - Saya punya kakak laki-laki</p>
+        <p><b>おねえさんがいます (Oneesan ga imasu)</b> - Saya punya kakak perempuan</p>
+        <p><b>どうぞよろしく (Douzo yoroshiku)</b> - Senang bertemu</p>
+        <p><b>これからよろしくおねがいします (Kore kara yoroshiku onegaishimasu)</b> - Mari bekerja sama dengan baik</p>
+        <p><b>あなたのなまえはなんですか (Anata no namae wa nan desu ka)</b> - Siapa nama Anda?</p>
+        <p><b>どこにすんでいますか (Doko ni sundeimasu ka)</b> - Di mana kamu tinggal?</p>
+        <p><b>なんさいですか (Nansai desu ka)</b> - Umur berapa?</p>
+        <p><b>すんでいるところはどこですか (Sundeiru tokoro wa doko desu ka)</b> - Kamu tinggal di mana sekarang?</p>
+        <p><b>なにをしていますか (Nani o shiteimasu ka)</b> - Kamu sedang apa?</p>
+        <p><b>どうしてにほんにきましたか (Doushite Nihon ni kimashita ka)</b> - Kenapa datang ke Jepang?</p>
+        <p><b>たのしみにしています (Tanoshimi ni shiteimasu)</b> - Saya menantikannya</p>
+        <p><b>はたらいています (Hatariteimasu)</b> - Saya bekerja</p>
+        <p><b>にほんごのべんきょうをしています (Nihongo no benkyou o shiteimasu)</b> - Saya belajar bahasa Jepang</p>
+        <p><b>なまえをおしえてください (Namae o oshiete kudasai)</b> - Tolong beri tahu nama Anda</p>
+        <p><b>はじめてにほんにきました (Hajimete Nihon ni kimashita)</b> - Ini pertama kali saya datang ke Jepang</p>
+        <p><b>にほんにすんでいます (Nihon ni sundeimasu)</b> - Saya tinggal di Jepang</p>
+        <p><b>どこにすんでいるんですか (Doko ni sundeiru n desu ka)</b> - Kamu tinggal di mana?</p>
+        <p><b>あなたはなんさいですか (Anata wa nansai desu ka)</b> - Berapa umur Anda?</p>
+        <p><b>よろしくおねがいします (Yoroshiku onegaishimasu)</b> - Mohon kerja samanya</p>
+    `;
+    break;
+
+    case 'pertanyaan':
+        htmlContent = `
+            <h5><b>4. Pertanyaan Umum (質問 - Shitsumon)</b></h5>
+            <hr>
+            <p><b>これはなんですか (Kore wa nan desu ka)</b> - Apa ini?</p>
+            <p><b>それはなんですか (Sore wa nan desu ka)</b> - Apa itu?</p>
+            <p><b>あれはなんですか (Are wa nan desu ka)</b> - Apa yang di sana itu?</p>
+            <p><b>だれですか (Dare desu ka)</b> - Siapa?</p>
+            <p><b>どこですか (Doko desu ka)</b> - Di mana?</p>
+            <p><b>いつですか (Itsu desu ka)</b> - Kapan?</p>
+            <p><b>どうしてですか (Doushite desu ka)</b> - Mengapa?</p>
+            <p><b>なんじですか (Nanji desu ka)</b> - Jam berapa?</p>
+            <p><b>いくらですか (Ikura desu ka)</b> - Berapa harganya?</p>
+            <p><b>なんさいですか (Nansai desu ka)</b> - Umur berapa?</p>
+            <p><b>どこにいきますか (Doko ni ikimasu ka)</b> - Mau pergi ke mana?</p>
+            <p><b>どこからきましたか (Doko kara kimashita ka)</b> - Dari mana datangnya?</p>
+            <p><b>なにをしていますか (Nani o shiteimasu ka)</b> - Sedang apa?</p>
+            <p><b>どこにすんでいますか (Doko ni sundeimasu ka)</b> - Tinggal di mana?</p>
+            <p><b>どこでかいましたか (Doko de kaimashita ka)</b> - Beli di mana?</p>
+            <p><b>どうやっていきますか (Dou yatte ikimasu ka)</b> - Bagaimana cara ke sana?</p>
+            <p><b>だれといきますか (Dare to ikimasu ka)</b> - Pergi dengan siapa?</p>
+            <p><b>どのくらいかかりますか (Dono kurai kakarimasu ka)</b> - Berapa lama?</p>
+            <p><b>なんでですか (Nande desu ka)</b> - Kenapa begitu?</p>
+            <p><b>だいじょうぶですか (Daijoubu desu ka)</b> - Apakah kamu baik-baik saja?</p>
+            <p><b>げんきですか (Genki desu ka)</b> - Apa kabar?</p>
+            <p><b>どこにありますか (Doko ni arimasu ka)</b> - Di mana letaknya?</p>
+            <p><b>どこにいけばいいですか (Doko ni ikeba ii desu ka)</b> - Ke mana sebaiknya saya pergi?</p>
+            <p><b>なんじにあいますか (Nanji ni aimasu ka)</b> - Jam berapa kita bertemu?</p>
+            <p><b>どのへんですか (Dono hen desu ka)</b> - Sekitar mana?</p>
+            <p><b>どうしましたか (Dou shimashita ka)</b> - Ada apa?</p>
+            <p><b>なにがすきですか (Nani ga suki desu ka)</b> - Apa yang kamu suka?</p>
+            <p><b>なにがきらいですか (Nani ga kirai desu ka)</b> - Apa yang kamu tidak suka?</p>
+            <p><b>どんなスポーツがすきですか (Donna supootsu ga suki desu ka)</b> - Olahraga apa yang kamu suka?</p>
+            <p><b>どんなたべものがすきですか (Donna tabemono ga suki desu ka)</b> - Makanan apa yang kamu suka?</p>
+            <p><b>なにをのみますか (Nani o nomimasu ka)</b> - Kamu minum apa?</p>
+            <p><b>なんのしごとをしていますか (Nan no shigoto o shiteimasu ka)</b> - Pekerjaanmu apa?</p>
+            <p><b>どこにすんでいるんですか (Doko ni sundeiru n desu ka)</b> - Kamu tinggal di mana sekarang?</p>
+            <p><b>いまなんじですか (Ima nanji desu ka)</b> - Sekarang jam berapa?</p>
+            <p><b>なにをかっていますか (Nani o katteimasu ka)</b> - Kamu sedang beli apa?</p>
+            <p><b>なんのえいががすきですか (Nan no eiga ga suki desu ka)</b> - Film apa yang kamu suka?</p>
+            <p><b>どのくらいにほんごをべんきょうしていますか (Dono kurai Nihongo o benkyou shiteimasu ka)</b> - Sudah berapa lama belajar bahasa Jepang?</p>
+            <p><b>どうしてにほんにきましたか (Doushite Nihon ni kimashita ka)</b> - Kenapa datang ke Jepang?</p>
+            <p><b>どこではたらいていますか (Doko de hataraiteimasu ka)</b> - Kamu kerja di mana?</p>
+            <p><b>どこにいきたいですか (Doko ni ikitai desu ka)</b> - Kamu ingin pergi ke mana?</p>
+            <p><b>どのくにがすきですか (Dono kuni ga suki desu ka)</b> - Negara mana yang kamu suka?</p>
+            <p><b>にほんのなにがすきですか (Nihon no nani ga suki desu ka)</b> - Apa yang kamu suka dari Jepang?</p>
+            <p><b>いまどこにいますか (Ima doko ni imasu ka)</b> - Kamu sedang di mana?</p>
+            <p><b>なにをしていますか (Nani o shiteimasu ka)</b> - Sedang apa?</p>
+            <p><b>どうやってべんきょうしていますか (Dou yatte benkyou shiteimasu ka)</b> - Bagaimana cara kamu belajar?</p>
+            <p><b>なんのほんをよみますか (Nan no hon o yomimasu ka)</b> - Buku apa yang kamu baca?</p>
+            <p><b>どんなおんがくがすきですか (Donna ongaku ga suki desu ka)</b> - Musik seperti apa yang kamu suka?</p>
+            <p><b>どこにりょこうしたいですか (Doko ni ryokou shitai desu ka)</b> - Mau liburan ke mana?</p>
+            <p><b>なんのしゅみがありますか (Nan no shumi ga arimasu ka)</b> - Hobi kamu apa?</p>
+            <p><b>なにをたべたいですか (Nani o tabetai desu ka)</b> - Ingin makan apa?</p>
+            <p><b>なにをのみたいですか (Nani o nomitai desu ka)</b> - Ingin minum apa?</p>
+            <p><b>なにがいちばんすきですか (Nani ga ichiban suki desu ka)</b> - Apa yang paling kamu suka?</p>
+            <p><b>なんのアニメがすきですか (Nan no anime ga suki desu ka)</b> - Anime apa yang kamu suka?</p>
+            <p><b>どこでうまれましたか (Doko de umaremashita ka)</b> - Lahir di mana?</p>
+            <p><b>いつたんじょうびですか (Itsu tanjoubi desu ka)</b> - Kapan ulang tahunmu?</p>
+            <p><b>なんねんうまれですか (Nannen umare desu ka)</b> - Lahir tahun berapa?</p>
+            <p><b>どこにすみたいですか (Doko ni sumitai desu ka)</b> - Ingin tinggal di mana?</p>
+            <p><b>どうでしたか (Dou deshita ka)</b> - Bagaimana?</p>
+            <p><b>ほんとうですか (Hontou desu ka)</b> - Benarkah?</p>
+            <p><b>なんといいましたか (Nan to iimashita ka)</b> - Tadi bilang apa?</p>
+            <p><b>もういちどいってください (Mou ichido itte kudasai)</b> - Tolong ulangi sekali lagi</p>
+            <p><b>どうやっていきますか (Dou yatte ikimasu ka)</b> - Bagaimana cara ke sana?</p>
+            <p><b>なんのいみですか (Nan no imi desu ka)</b> - Apa artinya?</p>
+            <p><b>どうおもいますか (Dou omoimasu ka)</b> - Apa pendapatmu?</p>
+            <p><b>なんのことですか (Nan no koto desu ka)</b> - Tentang apa itu?</p>
+            <p><b>なんじにねますか (Nanji ni nemasu ka)</b> - Tidur jam berapa?</p>
+            <p><b>なんじにおきますか (Nanji ni okimasu ka)</b> - Bangun jam berapa?</p>
+            <p><b>どこであそびますか (Doko de asobimasu ka)</b> - Bermain di mana?</p>
+            <p><b>なにをみますか (Nani o mimasu ka)</b> - Menonton apa?</p>
+            <p><b>なんのテレビをみますか (Nan no terebi o mimasu ka)</b> - Nonton acara TV apa?</p>
+            <p><b>だれとすんでいますか (Dare to sundeimasu ka)</b> - Tinggal dengan siapa?</p>
+            <p><b>どうしておそいですか (Doushite osoi desu ka)</b> - Kenapa terlambat?</p>
+            <p><b>なんでいそがしいですか (Nande isogashii desu ka)</b> - Kenapa sibuk?</p>
+            <p><b>どんなひとですか (Donna hito desu ka)</b> - Orang seperti apa dia?</p>
+            <p><b>どのへやですか (Dono heya desu ka)</b> - Kamar yang mana?</p>
+            <p><b>どんなてんきですか (Donna tenki desu ka)</b> - Cuacanya seperti apa?</p>
+            <p><b>いまどこですか (Ima doko desu ka)</b> - Sekarang di mana?</p>
+            <p><b>どのくらいまちますか (Dono kurai machimasu ka)</b> - Akan menunggu berapa lama?</p>
+            <p><b>どうしましたか (Dou shimashita ka)</b> - Ada apa?</p>
+            <p><b>なんのじかんですか (Nan no jikan desu ka)</b> - Waktu untuk apa?</p>
+            <p><b>どんなほんがすきですか (Donna hon ga suki desu ka)</b> - Buku seperti apa yang kamu suka?</p>
+            <p><b>なんのかもくがすきですか (Nan no kamoku ga suki desu ka)</b> - Pelajaran apa yang kamu suka?</p>
+            <p><b>なんのいろがすきですか (Nan no iro ga suki desu ka)</b> - Warna apa yang kamu suka?</p>
+            <p><b>なんのゲームをしますか (Nan no geemu o shimasu ka)</b> - Game apa yang kamu mainkan?</p>
+            <p><b>どこでたべますか (Doko de tabemasu ka)</b> - Makan di mana?</p>
+            <p><b>どんなレストランがすきですか (Donna resutoran ga suki desu ka)</b> - Restoran seperti apa yang kamu suka?</p>
+            <p><b>どんなところにいきたいですか (Donna tokoro ni ikitai desu ka)</b> - Tempat seperti apa yang ingin kamu kunjungi?</p>
+            <p><b>なにをかきますか (Nani o kakimasu ka)</b> - Menulis apa?</p>
+            <p><b>どうやってしますか (Dou yatte shimasu ka)</b> - Bagaimana melakukannya?</p>
+        `;
+        break;
+    
+        case 'frasa':
+            htmlContent = `
+                <h5><b>5. Frasa Bermanfaat (便利なフレーズ - Benrina Fureezu)</b></h5>
+                <hr>
+                <p><b>お願いします (Onegaishimasu)</b> - Tolong / Mohon bantuan</p>
+                <p><b>ありがとうございます (Arigatou gozaimasu)</b> - Terima kasih banyak</p>
+                <p><b>どういたしまして (Dou itashimashite)</b> - Sama-sama</p>
+                <p><b>すみません (Sumimasen)</b> - Maaf / Permisi</p>
+                <p><b>ごめんなさい (Gomennasai)</b> - Maafkan saya</p>
+                <p><b>はい (Hai)</b> - Ya</p>
+                <p><b>いいえ (Iie)</b> - Tidak</p>
+                <p><b>わかります (Wakarimasu)</b> - Saya mengerti</p>
+                <p><b>わかりません (Wakarimasen)</b> - Saya tidak mengerti</p>
+                <p><b>もういちどお願いします (Mou ichido onegaishimasu)</b> - Tolong ulangi sekali lagi</p>
+                <p><b>ゆっくり話してください (Yukkuri hanashite kudasai)</b> - Tolong bicara pelan-pelan</p>
+                <p><b>ちょっと待ってください (Chotto matte kudasai)</b> - Tolong tunggu sebentar</p>
+                <p><b>大丈夫です (Daijoubu desu)</b> - Tidak apa-apa / Saya baik-baik saja</p>
+                <p><b>いいですね (Ii desu ne)</b> - Bagus ya / Kedengarannya baik</p>
+                <p><b>本当ですか (Hontou desu ka)</b> - Benarkah?</p>
+                <p><b>すごいですね (Sugoi desu ne)</b> - Hebat sekali!</p>
+                <p><b>がんばってください (Ganbatte kudasai)</b> - Semangat ya / Lakukan yang terbaik</p>
+                <p><b>お疲れ様です (Otsukaresama desu)</b> - Terima kasih atas kerja kerasnya</p>
+                <p><b>おめでとうございます (Omedetou gozaimasu)</b> - Selamat!</p>
+                <p><b>いただきます (Itadakimasu)</b> - Selamat makan (sebelum makan)</p>
+                <p><b>ごちそうさまでした (Gochisousama deshita)</b> - Terima kasih atas makanannya</p>
+                <p><b>いってきます (Ittekimasu)</b> - Saya berangkat dulu</p>
+                <p><b>いってらっしゃい (Itterasshai)</b> - Hati-hati di jalan</p>
+                <p><b>ただいま (Tadaima)</b> - Saya pulang</p>
+                <p><b>おかえりなさい (Okaerinasai)</b> - Selamat datang kembali</p>
+                <p><b>よろしくお願いします (Yoroshiku onegaishimasu)</b> - Mohon bimbingannya / Senang bekerja sama</p>
+                <p><b>失礼します (Shitsurei shimasu)</b> - Permisi (sopan)</p>
+                <p><b>お先に失礼します (Osaki ni shitsurei shimasu)</b> - Permisi, saya pamit duluan</p>
+                <p><b>おじゃまします (Ojama shimasu)</b> - Permisi (saat masuk rumah orang)</p>
+                <p><b>どうぞ (Douzo)</b> - Silakan</p>
+                <p><b>ちょっといいですか (Chotto ii desu ka)</b> - Boleh sebentar?</p>
+                <p><b>お久しぶりです (Ohisashiburi desu)</b> - Lama tidak bertemu</p>
+                <p><b>気をつけて (Ki o tsukete)</b> - Hati-hati ya</p>
+                <p><b>お楽しみに (Otanoshimi ni)</b> - Nantikan ya / Saya menantikan</p>
+                <p><b>頑張ります (Ganbarimasu)</b> - Saya akan berusaha!</p>
+                <p><b>仕方がない (Shikata ga nai)</b> - Tidak bisa dihindari</p>
+                <p><b>そうですね (Sou desu ne)</b> - Betul / Ya, benar juga</p>
+                <p><b>なるほど (Naruhodo)</b> - Oh, begitu</p>
+                <p><b>たぶんそうです (Tabun sou desu)</b> - Mungkin begitu</p>
+                <p><b>もちろんです (Mochiron desu)</b> - Tentu saja</p>
+                <p><b>ちがいます (Chigaimasu)</b> - Tidak benar / Bukan</p>
+                <p><b>そう思います (Sou omoimasu)</b> - Saya juga berpikir begitu</p>
+                <p><b>気にしないでください (Ki ni shinaide kudasai)</b> - Jangan khawatirkan</p>
+                <p><b>楽しみにしています (Tanoshimi ni shiteimasu)</b> - Saya menantikannya</p>
+                <p><b>ごめんね (Gomen ne)</b> - Maaf ya (informal)</p>
+                <p><b>いいですよ (Ii desu yo)</b> - Tidak apa-apa / Silakan saja</p>
+                <p><b>ちょっと待って (Chotto matte)</b> - Tunggu sebentar (informal)</p>
+                <p><b>どうしたの (Doushita no)</b> - Ada apa?</p>
+                <p><b>だめです (Dame desu)</b> - Tidak boleh</p>
+                <p><b>いいえ、けっこうです (Iie, kekkou desu)</b> - Tidak, terima kasih</p>
+                <p><b>わすれました (Wasuremashita)</b> - Saya lupa</p>
+                <p><b>思い出しました (Omoidashimashita)</b> - Saya ingat</p>
+                <p><b>少々お待ちください (Shoushou omachi kudasai)</b> - Mohon tunggu sebentar (sopan)</p>
+                <p><b>どうぞお幸せに (Douzo o-shiawase ni)</b> - Semoga bahagia</p>
+                <p><b>お気をつけてください (O-ki o tsukete kudasai)</b> - Harap berhati-hati</p>
+                <p><b>いい一日を (Ii ichinichi o)</b> - Semoga harimu menyenangkan</p>
+                <p><b>また会いましょう (Mata aimashou)</b> - Sampai bertemu lagi</p>
+                <p><b>お元気で (O-genki de)</b> - Semoga sehat selalu</p>
+                <p><b>お先にどうぞ (Osaki ni douzo)</b> - Silakan duluan</p>
+                <p><b>失礼しました (Shitsurei shimashita)</b> - Maaf atas ketidaksopanan saya</p>
+                <p><b>気をつけます (Ki o tsukemasu)</b> - Saya akan hati-hati</p>
+                <p><b>おだいじに (Odaiji ni)</b> - Semoga lekas sembuh</p>
+                <p><b>よろしくお願いしますね (Yoroshiku onegaishimasu ne)</b> - Mohon kerja samanya ya</p>
+                <p><b>そうしましょう (Sou shimashou)</b> - Mari kita lakukan begitu</p>
+                <p><b>どうぞこちらへ (Douzo kochira e)</b> - Silakan ke sini</p>
+                <p><b>うそでしょう (Uso deshou)</b> - Masa sih?! / Serius?</p>
+                <p><b>冗談ですよ (Joudan desu yo)</b> - Cuma bercanda kok</p>
+                <p><b>信じられない (Shinjirarenai)</b> - Tidak bisa dipercaya!</p>
+                <p><b>気に入ります (Ki ni irimasu)</b> - Saya suka / cocok</p>
+                <p><b>そんなことないです (Sonna koto nai desu)</b> - Tidak begitu / Tidak apa-apa kok</p>
+                <p><b>どうやってしますか (Dou yatte shimasu ka)</b> - Bagaimana melakukannya?</p>
+                <p><b>それはいいですね (Sore wa ii desu ne)</b> - Itu bagus ya</p>
+                <p><b>しんぱいしないで (Shinpai shinaide)</b> - Jangan khawatir</p>
+                <p><b>ゆっくりしてください (Yukkuri shite kudasai)</b> - Santai saja / Silakan istirahat</p>
+                <p><b>はじめましょう (Hajimemashou)</b> - Mari kita mulai</p>
+                <p><b>終わりました (Owarimashita)</b> - Sudah selesai</p>
+                <p><b>まだです (Mada desu)</b> - Belum</p>
+                <p><b>本当にありがとう (Hontou ni arigatou)</b> - Terima kasih banyak (tulus)</p>
+                <p><b>お元気ですか (O-genki desu ka)</b> - Apa kabar?</p>
+                <p><b>元気です (Genki desu)</b> - Saya baik-baik saja</p>
+                <p><b>どういたしまして (Dou itashimashite)</b> - Sama-sama</p>
+                <p><b>お楽しみください (O-tanoshimi kudasai)</b> - Silakan menikmati</p>
+                <p><b>気を楽にしてください (Ki o raku ni shite kudasai)</b> - Tenangkan diri</p>
+                <p><b>またね (Mata ne)</b> - Sampai jumpa (kasual)</p>
+                <p><b>じゃあね (Jaa ne)</b> - Dah dulu ya</p>
+                <p><b>バイバイ (Baibai)</b> - Bye-bye</p>
+                <p><b>お先にどうぞ (Osaki ni douzo)</b> - Silakan duluan</p>
+                <p><b>よろしく (Yoroshiku)</b> - Salam kenal (kasual)</p>
+                <p><b>了解です (Ryoukai desu)</b> - Paham / Oke!</p>
+                <p><b>なるほどね (Naruhodo ne)</b> - Oh begitu ya</p>
+                <p><b>そうかもしれません (Sou kamoshiremasen)</b> - Mungkin begitu</p>
+                <p><b>そうですねぇ (Sou desu ne)</b> - Ya, benar juga / Hmm iya...</p>
+                <p><b>お世話になります (O-sewa ni narimasu)</b> - Terima kasih atas bantuan Anda</p>
+            `;
+            break;
+
+            case 'emosi':
+    htmlContent = `
+        <h5><b>6. Ekspresi Emosi (感情表現 - Kanjou Hyōgen)</b></h5>
+        <hr>
+        <p><b>うれしい！ (Ureshii!)</b> - Aku senang sekali!</p>
+        <p><b>楽しいです (Tanoshii desu)</b> - Menyenangkan sekali</p>
+        <p><b>幸せです (Shiawase desu)</b> - Aku bahagia</p>
+        <p><b>ワクワクします (Wakuwaku shimasu)</b> - Aku bersemangat!</p>
+        <p><b>ドキドキします (Dokidoki shimasu)</b> - Deg-degan!</p>
+        <p><b>安心しました (Anshin shimashita)</b> - Aku merasa lega</p>
+        <p><b>ホッとしました (Hotto shimashita)</b> - Syukurlah / Lega rasanya</p>
+        <p><b>すごく嬉しいです (Sugoku ureshii desu)</b> - Aku sangat senang!</p>
+        <p><b>感動しました (Kandou shimashita)</b> - Aku terharu</p>
+        <p><b>びっくりした！ (Bikkuri shita!)</b> - Kaget banget!</p>
+        <p><b>信じられない！ (Shinjirarenai!)</b> - Nggak bisa dipercaya!</p>
+        <p><b>悲しいです (Kanashii desu)</b> - Aku sedih</p>
+        <p><b>つらいです (Tsurai desu)</b> - Rasanya berat / Menyakitkan</p>
+        <p><b>寂しいです (Sabishii desu)</b> - Aku merasa kesepian</p>
+        <p><b>悔しい！ (Kuyashii!)</b> - Kesal banget!</p>
+        <p><b>怒っています (Okotteimasu)</b> - Aku marah</p>
+        <p><b>むかつく！ (Mukatsuku!)</b> - Nyebelin banget!</p>
+        <p><b>がっかりしました (Gakkari shimashita)</b> - Aku kecewa</p>
+        <p><b>怖いです (Kowai desu)</b> - Aku takut</p>
+        <p><b>心配です (Shinpai desu)</b> - Aku khawatir</p>
+        <p><b>緊張しています (Kinchou shiteimasu)</b> - Aku gugup</p>
+        <p><b>疲れました (Tsukaremashita)</b> - Aku lelah</p>
+        <p><b>眠いです (Nemui desu)</b> - Aku ngantuk</p>
+        <p><b>めんどくさい (Mendokusai)</b> - Ribet banget / Males</p>
+        <p><b>退屈です (Taikutsu desu)</b> - Bosan</p>
+        <p><b>恥ずかしい (Hazukashii)</b> - Malu</p>
+        <p><b>照れます (Teremasu)</b> - Aku malu (tersipu)</p>
+        <p><b>羨ましい (Urayamashii)</b> - Aku iri</p>
+        <p><b>誇りに思います (Hokori ni omoimasu)</b> - Aku bangga</p>
+        <p><b>感謝しています (Kansha shiteimasu)</b> - Aku berterima kasih</p>
+        <p><b>助かりました (Tasukarimashita)</b> - Terbantu sekali</p>
+        <p><b>ほっとしました (Hotto shimashita)</b> - Rasanya lega</p>
+        <p><b>緊張した (Kinchou shita)</b> - Aku tadi tegang</p>
+        <p><b>つかれた〜 (Tsukareta~)</b> - Capek banget...</p>
+        <p><b>びみょうです (Bimyou desu)</b> - Hmm… agak aneh / tidak yakin</p>
+        <p><b>楽しかったです！ (Tanoshikatta desu!)</b> - Tadi seru sekali!</p>
+        <p><b>気持ちいいです (Kimochi ii desu)</b> - Rasanya enak / nyaman</p>
+        <p><b>スッキリしました (Sukkiri shimashita)</b> - Rasanya lega / plong</p>
+        <p><b>ショックです (Shokku desu)</b> - Aku kaget (secara emosional)</p>
+        <p><b>イライラします (Iraira shimasu)</b> - Aku kesal</p>
+        <p><b>やる気があります (Yaruki ga arimasu)</b> - Aku termotivasi!</p>
+        <p><b>やる気がありません (Yaruki ga arimasen)</b> - Lagi nggak semangat</p>
+        <p><b>びびった！ (Bibitta!)</b> - Aku kaget banget (kasual)</p>
+        <p><b>ドン引きです (Donbiki desu)</b> - Aku ilfeel banget</p>
+        <p><b>泣きそうです (Nakisou desu)</b> - Aku hampir menangis</p>
+        <p><b>泣いちゃった (Naichatta)</b> - Aku sampai nangis</p>
+        <p><b>笑っちゃった (Waracchatta)</b> - Aku jadi ketawa</p>
+        <p><b>怖かった〜 (Kowakatta~)</b> - Serem banget tadi!</p>
+        <p><b>よかった！ (Yokatta!)</b> - Syukurlah!</p>
+        <p><b>すごく緊張しました (Sugoku kinchou shimashita)</b> - Aku sangat gugup</p>
+        <p><b>ホッとした (Hotto shita)</b> - Rasanya lega</p>
+        <p><b>やった！ (Yatta!)</b> - Berhasil! / Hore!</p>
+        <p><b>最高です！ (Saikou desu!)</b> - Luar biasa!</p>
+        <p><b>つまらない (Tsumaranai)</b> - Membosankan</p>
+        <p><b>ムカムカします (Mukamuka shimasu)</b> - Aku muak</p>
+        <p><b>感激しました (Kangeki shimashita)</b> - Aku sangat terharu</p>
+        <p><b>幸運です (Kouun desu)</b> - Aku beruntung</p>
+        <p><b>不安です (Fuan desu)</b> - Aku cemas</p>
+        <p><b>びっくりしました (Bikkuri shimashita)</b> - Aku terkejut</p>
+        <p><b>冷静です (Reisei desu)</b> - Aku tenang</p>
+        <p><b>落ち着きました (Ochitsukimashita)</b> - Aku sudah tenang</p>
+        <p><b>胸がいっぱいです (Mune ga ippai desu)</b> - Hatiku penuh (terharu)</p>
+        <p><b>怒られました (Okoraremashita)</b> - Aku dimarahi</p>
+        <p><b>びみょうな気持ちです (Bimyou na kimochi desu)</b> - Perasaanku campur aduk</p>
+        <p><b>不満です (Fuman desu)</b> - Aku tidak puas</p>
+        <p><b>困っています (Komatteimasu)</b> - Aku bingung / kesulitan</p>
+        <p><b>安心です (Anshin desu)</b> - Tenang rasanya</p>
+        <p><b>感無量です (Kanmu ryou desu)</b> - Aku sangat terharu (sopan)</p>
+        <p><b>楽になりました (Raku ni narimashita)</b> - Sekarang lebih tenang</p>
+        <p><b>怖くないです (Kowakunai desu)</b> - Aku tidak takut</p>
+        <p><b>わくわくしてきた (Wakuwaku shite kita)</b> - Aku jadi semangat!</p>
+        <p><b>ドキドキが止まらない (Dokidoki ga tomaranai)</b> - Jantungku berdebar terus</p>
+        <p><b>気が楽です (Ki ga raku desu)</b> - Aku merasa lebih tenang</p>
+        <p><b>感謝の気持ちでいっぱいです (Kansha no kimochi de ippai desu)</b> - Aku sangat bersyukur</p>
+        <p><b>泣きたい気分です (Nakitai kibun desu)</b> - Aku pengin nangis</p>
+        <p><b>すごく怖かったです (Sugoku kowakatta desu)</b> - Aku sangat takut</p>
+        <p><b>少し心配です (Sukoshi shinpai desu)</b> - Aku agak khawatir</p>
+        <p><b>もう大丈夫です (Mou daijoubu desu)</b> - Sekarang sudah tidak apa-apa</p>
+        <p><b>気分がいいです (Kibun ga ii desu)</b> - Perasaanku baik</p>
+        <p><b>気分が悪いです (Kibun ga warui desu)</b> - Aku tidak enak badan</p>
+        <p><b>楽しい気分です (Tanoshii kibun desu)</b> - Aku dalam suasana hati yang baik</p>
+        <p><b>悲しい気分です (Kanashii kibun desu)</b> - Aku sedang sedih</p>
+        <p><b>びっくり仰天です (Bikkuri gyouten desu)</b> - Aku terkejut sekali!</p>
+        <p><b>感動の涙です (Kandou no namida desu)</b> - Air mata haru</p>
+        <p><b>泣ける話です (Nakeru hanashi desu)</b> - Ceritanya bikin nangis</p>
+        <p><b>心が温かいです (Kokoro ga atatakai desu)</b> - Hatiku terasa hangat</p>
+        <p><b>心が痛いです (Kokoro ga itai desu)</b> - Hatiku sakit</p>
+        <p><b>楽観的です (Rakkanteki desu)</b> - Aku optimis</p>
+        <p><b>絶望的です (Zetsubouteki desu)</b> - Putus asa</p>
+        <p><b>びっくりぽん！ (Bikkuri pon!)</b> - Wah, kaget banget! (kasual lucu)</p>
+        <p><b>ほっこりします (Hokkori shimasu)</b> - Rasanya hangat di hati</p>
+        <p><b>幸せいっぱいです (Shiawase ippai desu)</b> - Penuh kebahagiaan</p>
+        <p><b>泣きました (Nakimashita)</b> - Aku menangis</p>
+        <p><b>笑いました (Waraimashita)</b> - Aku tertawa</p>
+        <p><b>すごく幸せです (Sugoku shiawase desu)</b> - Aku sangat bahagia!</p>
+        <p><b>心から感謝します (Kokoro kara kansha shimasu)</b> - Aku berterima kasih dari hati</p>
+    `;
+    break;
+
+    case 'sopan':
+    htmlContent = `
+        <h5><b>7. Kata Sopan & Formalitas (敬語 - Keigo)</b></h5>
+        <hr>
+        <p><b>おはようございます (Ohayou gozaimasu)</b> - Selamat pagi (sopan)</p>
+        <p><b>こんにちは (Konnichiwa)</b> - Selamat siang</p>
+        <p><b>こんばんは (Konbanwa)</b> - Selamat malam</p>
+        <p><b>ありがとうございます (Arigatou gozaimasu)</b> - Terima kasih banyak</p>
+        <p><b>どうもありがとうございます (Doumo arigatou gozaimasu)</b> - Terima kasih sebesar-besarnya</p>
+        <p><b>恐れ入ります (Osore irimasu)</b> - Maaf / Terima kasih (sangat sopan)</p>
+        <p><b>申し訳ありません (Moushiwake arimasen)</b> - Saya mohon maaf (formal sekali)</p>
+        <p><b>失礼します (Shitsurei shimasu)</b> - Permisi (sopan)</p>
+        <p><b>お世話になります (Osewa ni narimasu)</b> - Terima kasih atas bantuannya</p>
+        <p><b>よろしくお願いします (Yoroshiku onegaishimasu)</b> - Mohon bantuannya / Senang bekerja sama</p>
+        <p><b>お疲れ様です (Otsukaresama desu)</b> - Terima kasih atas kerja kerasnya</p>
+        <p><b>ご苦労様です (Gokurousama desu)</b> - Terima kasih atas usahanya (atasan ke bawahan)</p>
+        <p><b>お先に失礼します (Osaki ni shitsurei shimasu)</b> - Permisi, saya pamit duluan</p>
+        <p><b>お邪魔します (Ojama shimasu)</b> - Permisi masuk (ke rumah orang lain)</p>
+        <p><b>お待たせしました (Omatase shimashita)</b> - Maaf sudah menunggu</p>
+        <p><b>お待ちください (Omachi kudasai)</b> - Silakan tunggu sebentar</p>
+        <p><b>少々お待ちください (Shoushou omachi kudasai)</b> - Mohon tunggu sebentar (lebih sopan)</p>
+        <p><b>もう一度お願いします (Mou ichido onegaishimasu)</b> - Mohon ulangi sekali lagi</p>
+        <p><b>確認いたします (Kakunin itashimasu)</b> - Akan saya konfirmasi (sopan)</p>
+        <p><b>少々お時間をいただけますか (Shoushou ojikan o itadakemasu ka)</b> - Bolehkah saya minta sedikit waktu Anda?</p>
+        <p><b>承知しました (Shouchi shimashita)</b> - Baik, saya mengerti (sopan sekali)</p>
+        <p><b>かしこまりました (Kashikomarimashita)</b> - Baik, akan saya lakukan (sangat sopan)</p>
+        <p><b>失礼いたしました (Shitsurei itashimashita)</b> - Mohon maaf atas ketidaksopanan saya</p>
+        <p><b>ご理解いただきありがとうございます (Gorikai itadaki arigatou gozaimasu)</b> - Terima kasih atas pengertiannya</p>
+        <p><b>ご協力ありがとうございます (Gokyouryoku arigatou gozaimasu)</b> - Terima kasih atas kerja samanya</p>
+        <p><b>よろしくお願いいたします (Yoroshiku onegai itashimasu)</b> - Mohon kerja samanya (sangat sopan)</p>
+        <p><b>どうぞお入りください (Douzo ohairi kudasai)</b> - Silakan masuk</p>
+        <p><b>お掛けください (Okake kudasai)</b> - Silakan duduk</p>
+        <p><b>ご覧ください (Goran kudasai)</b> - Silakan lihat</p>
+        <p><b>お召し上がりください (Omeshiagari kudasai)</b> - Silakan makan / minum</p>
+        <p><b>お楽しみください (Otanoshimi kudasai)</b> - Silakan menikmati</p>
+        <p><b>お入りいただけますか (Ohairi itadakemasu ka)</b> - Bolehkah Anda masuk?</p>
+        <p><b>ご確認ください (Gokakunin kudasai)</b> - Silakan periksa</p>
+        <p><b>ご連絡ください (Gorenraku kudasai)</b> - Silakan hubungi kami</p>
+        <p><b>ご注意ください (Gochuui kudasai)</b> - Mohon berhati-hati</p>
+        <p><b>お待ちしております (Omachi shite orimasu)</b> - Kami menunggu kedatangan Anda</p>
+        <p><b>ご利用ありがとうございます (Goriyou arigatou gozaimasu)</b> - Terima kasih telah menggunakan layanan kami</p>
+        <p><b>ご来店ありがとうございます (Goraiten arigatou gozaimasu)</b> - Terima kasih telah berkunjung</p>
+        <p><b>申し上げます (Moushiagemasu)</b> - Saya sampaikan (sangat sopan)</p>
+        <p><b>伺います (Ukagaimasu)</b> - Saya akan datang / bertanya (sopan)</p>
+        <p><b>拝見します (Haiken shimasu)</b> - Saya melihat (sopan)</p>
+        <p><b>存じます (Zonjimasu)</b> - Saya tahu / pikir (sopan)</p>
+        <p><b>いたします (Itashimasu)</b> - Melakukan (bentuk sopan dari します)</p>
+        <p><b>いただきます (Itadakimasu)</b> - Saya terima (makanan / bantuan)</p>
+        <p><b>いただけますか (Itadakemasu ka)</b> - Bolehkah saya menerima / mendapatkan?</p>
+        <p><b>申し上げます (Moushiagemasu)</b> - Saya sampaikan (sopan tinggi)</p>
+        <p><b>ご挨拶申し上げます (Go-aisatsu moushiagemasu)</b> - Izinkan saya menyampaikan salam</p>
+        <p><b>お詫び申し上げます (Owabi moushiagemasu)</b> - Mohon maaf sebesar-besarnya</p>
+        <p><b>ご報告いたします (Gohoukoku itashimasu)</b> - Saya akan melaporkan</p>
+        <p><b>ご案内いたします (Goannai itashimasu)</b> - Saya akan mengantar / memandu</p>
+        <p><b>ご説明いたします (Gosetsumei itashimasu)</b> - Saya akan menjelaskan</p>
+        <p><b>ご連絡いたします (Gorenraku itashimasu)</b> - Saya akan menghubungi Anda</p>
+        <p><b>承知いたしました (Shouchi itashimashita)</b> - Baik, saya mengerti (super sopan)</p>
+        <p><b>お時間をいただきありがとうございます (Ojikan o itadaki arigatou gozaimasu)</b> - Terima kasih atas waktunya</p>
+        <p><b>お忙しいところありがとうございます (Oisogashii tokoro arigatou gozaimasu)</b> - Terima kasih di tengah kesibukan Anda</p>
+        <p><b>ご迷惑をおかけしました (Gomeiwaku o okake shimashita)</b> - Mohon maaf atas ketidaknyamanan</p>
+        <p><b>ご安心ください (Goanshin kudasai)</b> - Mohon tenang / Jangan khawatir</p>
+        <p><b>お体にお気をつけください (Okarada ni oki o tsukete kudasai)</b> - Jaga kesehatan Anda</p>
+        <p><b>お世話になりました (Osewa ni narimashita)</b> - Terima kasih atas bantuannya (masa lalu)</p>
+        <p><b>これからもよろしくお願いします (Kore kara mo yoroshiku onegaishimasu)</b> - Mohon dukungannya ke depannya</p>
+        <p><b>またのご利用をお待ちしております (Mata no goriyou o omachi shite orimasu)</b> - Kami menunggu kedatangan Anda kembali</p>
+        <p><b>心より感謝申し上げます (Kokoro yori kansha moushiagemasu)</b> - Saya berterima kasih dari hati</p>
+        <p><b>何卒よろしくお願いいたします (Nanitodo yoroshiku onegai itashimasu)</b> - Mohon bantuan dan dukungan Anda</p>
+        <p><b>ご健勝をお祈り申し上げます (Gokenshou o oinori moushiagemasu)</b> - Semoga Anda selalu sehat</p>
+        <p><b>ご成功をお祈りいたします (Goseikou o oinori itashimasu)</b> - Saya doakan kesuksesan Anda</p>
+        <p><b>ご連絡をお待ちしております (Gorenraku o omachi shite orimasu)</b> - Kami menunggu kabar Anda</p>
+        <p><b>お会いできて光栄です (Oai dekite kouei desu)</b> - Merupakan kehormatan bisa bertemu Anda</p>
+        <p><b>いつもありがとうございます (Itsumo arigatou gozaimasu)</b> - Terima kasih atas segalanya</p>
+        <p><b>ご配慮ありがとうございます (Gohairyo arigatou gozaimasu)</b> - Terima kasih atas perhatian Anda</p>
+        <p><b>ご確認ありがとうございます (Gokakunin arigatou gozaimasu)</b> - Terima kasih sudah memeriksa</p>
+        <p><b>ご連絡ありがとうございます (Gorenraku arigatou gozaimasu)</b> - Terima kasih atas kabarnya</p>
+        <p><b>ご返信ありがとうございます (Go henshin arigatou gozaimasu)</b> - Terima kasih atas balasannya</p>
+        <p><b>ご来場ありがとうございます (Goraijou arigatou gozaimasu)</b> - Terima kasih atas kehadirannya</p>
+        <p><b>お楽しみにしております (Otanoshimi ni shite orimasu)</b> - Kami menantikan (acara, produk, dll.)</p>
+        <p><b>失礼いたします (Shitsurei itashimasu)</b> - Permisi (super sopan)</p>
+        <p><b>本当にありがとうございます (Hontou ni arigatou gozaimasu)</b> - Terima kasih yang sebesar-besarnya</p>
+        <p><b>誠にありがとうございます (Makoto ni arigatou gozaimasu)</b> - Terima kasih tulus (bahasa bisnis)</p>
+        <p><b>心から感謝いたします (Kokoro kara kansha itashimasu)</b> - Saya benar-benar berterima kasih</p>
+        <p><b>以上でございます (Ijou de gozaimasu)</b> - Sekian (sopan dalam presentasi)</p>
+        <p><b>ご清聴ありがとうございました (Goseichou arigatou gozaimashita)</b> - Terima kasih atas perhatian Anda</p>
+        <p><b>またよろしくお願いいたします (Mata yoroshiku onegai itashimasu)</b> - Mohon kerja samanya lagi nanti</p>
+        <p><b>お気をつけてお帰りください (Oki o tsukete okaeri kudasai)</b> - Hati-hati di jalan pulang</p>
+        <p><b>ご指導ありがとうございます (Goshidou arigatou gozaimasu)</b> - Terima kasih atas bimbingannya</p>
+        <p><b>お力添えありがとうございます (O chikara zoe arigatou gozaimasu)</b> - Terima kasih atas bantuan Anda</p>
+        <p><b>どうぞよろしくお願い申し上げます (Douzo yoroshiku onegai moushiagemasu)</b> - Mohon kerja samanya (sangat sopan)</p>
+    `;
+    break;
+
+    case 'kegiatan':
+    htmlContent = `
+        <h5><b>8. Kegiatan Sehari-hari (日常動作)</b></h5>
+        <hr>
+        <p><b>起きます (Okimasu)</b> - Bangun tidur</p>
+        <p><b>寝ます (Nemasu)</b> - Tidur</p>
+        <p><b>顔を洗います (Kao o araimasu)</b> - Mencuci muka</p>
+        <p><b>歯を磨きます (Ha o migakimasu)</b> - Menggosok gigi</p>
+        <p><b>シャワーを浴びます (Shawaa o abimasu)</b> - Mandi / memakai shower</p>
+        <p><b>着替えます (Kigaemasu)</b> - Ganti pakaian</p>
+        <p><b>朝ごはんを食べます (Asagohan o tabemasu)</b> - Sarapan</p>
+        <p><b>コーヒーを飲みます (Koohii o nomimasu)</b> - Minum kopi</p>
+        <p><b>新聞を読みます (Shinbun o yomimasu)</b> - Membaca koran</p>
+        <p><b>テレビを見ます (Terebi o mimasu)</b> - Menonton TV</p>
+        <p><b>音楽を聞きます (Ongaku o kikimasu)</b> - Mendengarkan musik</p>
+        <p><b>家を出ます (Ie o demasu)</b> - Keluar rumah</p>
+        <p><b>学校へ行きます (Gakkou e ikimasu)</b> - Pergi ke sekolah</p>
+        <p><b>会社へ行きます (Kaisha e ikimasu)</b> - Pergi ke kantor</p>
+        <p><b>電車に乗ります (Densha ni norimasu)</b> - Naik kereta</p>
+        <p><b>バスを待ちます (Basu o machimasu)</b> - Menunggu bus</p>
+        <p><b>車を運転します (Kuruma o unten shimasu)</b> - Menyetir mobil</p>
+        <p><b>歩きます (Arukimasu)</b> - Berjalan kaki</p>
+        <p><b>走ります (Hashirimasu)</b> - Berlari</p>
+        <p><b>働きます (Hatarakimasu)</b> - Bekerja</p>
+        <p><b>勉強します (Benkyou shimasu)</b> - Belajar</p>
+        <p><b>書きます (Kakimasu)</b> - Menulis</p>
+        <p><b>読みます (Yomimasu)</b> - Membaca</p>
+        <p><b>話します (Hanashimasu)</b> - Berbicara</p>
+        <p><b>聞きます (Kikimasu)</b> - Mendengar / bertanya</p>
+        <p><b>見ます (Mimasu)</b> - Melihat / menonton</p>
+        <p><b>掃除します (Souji shimasu)</b> - Membersihkan</p>
+        <p><b>洗濯します (Sentaku shimasu)</b> - Mencuci pakaian</p>
+        <p><b>料理します (Ryouri shimasu)</b> - Memasak</p>
+        <p><b>買い物します (Kaimono shimasu)</b> - Berbelanja</p>
+        <p><b>昼ごはんを食べます (Hirugohan o tabemasu)</b> - Makan siang</p>
+        <p><b>夜ごはんを食べます (Yorugohan o tabemasu)</b> - Makan malam</p>
+        <p><b>お茶を飲みます (Ocha o nomimasu)</b> - Minum teh</p>
+        <p><b>休みます (Yasumimasu)</b> - Istirahat</p>
+        <p><b>昼寝します (Hirune shimasu)</b> - Tidur siang</p>
+        <p><b>友達に会います (Tomodachi ni aimasu)</b> - Bertemu teman</p>
+        <p><b>家族と話します (Kazoku to hanashimasu)</b> - Mengobrol dengan keluarga</p>
+        <p><b>電話をかけます (Denwa o kakemasu)</b> - Menelepon</p>
+        <p><b>メッセージを送ります (Messeiji o okurimasu)</b> - Mengirim pesan</p>
+        <p><b>写真を撮ります (Shashin o torimasu)</b> - Mengambil foto</p>
+        <p><b>音楽を作ります (Ongaku o tsukurimasu)</b> - Membuat musik</p>
+        <p><b>映画を見ます (Eiga o mimasu)</b> - Menonton film</p>
+        <p><b>ゲームをします (Geemu o shimasu)</b> - Bermain game</p>
+        <p><b>本を読みます (Hon o yomimasu)</b> - Membaca buku</p>
+        <p><b>散歩します (Sanpo shimasu)</b> - Jalan-jalan</p>
+        <p><b>運動します (Undou shimasu)</b> - Berolahraga</p>
+        <p><b>走ります (Hashirimasu)</b> - Lari</p>
+        <p><b>泳ぎます (Oyogimasu)</b> - Berenang</p>
+        <p><b>歌います (Utaimasu)</b> - Bernyanyi</p>
+        <p><b>踊ります (Odorimasu)</b> - Menari</p>
+        <p><b>楽器を弾きます (Gakki o hikimasu)</b> - Bermain alat musik</p>
+        <p><b>絵を描きます (E o kakimasu)</b> - Menggambar / melukis</p>
+        <p><b>休憩します (Kyuukei shimasu)</b> - Beristirahat sejenak</p>
+        <p><b>帰ります (Kaerimasu)</b> - Pulang</p>
+        <p><b>玄関で靴を脱ぎます (Genkan de kutsu o nugimasu)</b> - Melepas sepatu di depan pintu</p>
+        <p><b>手を洗います (Te o araimasu)</b> - Mencuci tangan</p>
+        <p><b>ご飯を炊きます (Gohan o takimasu)</b> - Menanak nasi</p>
+        <p><b>皿を洗います (Sara o araimasu)</b> - Mencuci piring</p>
+        <p><b>掃除機をかけます (Soujiki o kakemasu)</b> - Menyedot debu</p>
+        <p><b>ベッドを整えます (Beddo o totonoemasu)</b> - Merapikan tempat tidur</p>
+        <p><b>シャワーを浴びます (Shawaa o abimasu)</b> - Mandi</p>
+        <p><b>髪を乾かします (Kami o kawakashimasu)</b> - Mengeringkan rambut</p>
+        <p><b>服をたたみます (Fuku o tatamimasu)</b> - Melipat pakaian</p>
+        <p><b>靴を履きます (Kutsu o hakimasu)</b> - Memakai sepatu</p>
+        <p><b>鍵をかけます (Kagi o kakemasu)</b> - Mengunci pintu</p>
+        <p><b>メールを読みます (Meeru o yomimasu)</b> - Membaca email</p>
+        <p><b>ニュースを見ます (Nyuusu o mimasu)</b> - Menonton berita</p>
+        <p><b>ノートに書きます (Nooto ni kakimasu)</b> - Menulis di buku catatan</p>
+        <p><b>勉強します (Benkyou shimasu)</b> - Belajar</p>
+        <p><b>パソコンを使います (Pasokon o tsukaimasu)</b> - Menggunakan komputer</p>
+        <p><b>スマホを見ます (Sumaho o mimasu)</b> - Melihat ponsel</p>
+        <p><b>音楽を聞きます (Ongaku o kikimasu)</b> - Mendengarkan musik</p>
+        <p><b>友達と遊びます (Tomodachi to asobimasu)</b> - Bermain dengan teman</p>
+        <p><b>散歩します (Sanpo shimasu)</b> - Berjalan santai</p>
+        <p><b>買い物します (Kaimono shimasu)</b> - Belanja</p>
+        <p><b>お風呂に入ります (Ofuro ni hairimasu)</b> - Berendam di pemandian</p>
+        <p><b>髪を洗います (Kami o araimasu)</b> - Mencuci rambut</p>
+        <p><b>顔を洗います (Kao o araimasu)</b> - Cuci muka</p>
+        <p><b>寝ます (Nemasu)</b> - Tidur</p>
+        <p><b>夢を見ます (Yume o mimasu)</b> - Bermimpi</p>
+        <p><b>目を覚まします (Me o samashimasu)</b> - Terbangun</p>
+        <p><b>時計を見ます (Tokei o mimasu)</b> - Melihat jam</p>
+        <p><b>歯を磨きます (Ha o migakimasu)</b> - Menggosok gigi</p>
+        <p><b>朝食を作ります (Choushoku o tsukurimasu)</b> - Membuat sarapan</p>
+        <p><b>勉強を始めます (Benkyou o hajimemasu)</b> - Mulai belajar</p>
+        <p><b>宿題をします (Shukudai o shimasu)</b> - Mengerjakan PR</p>
+        <p><b>仕事をします (Shigoto o shimasu)</b> - Bekerja</p>
+        <p><b>会議をします (Kaigi o shimasu)</b> - Rapat</p>
+        <p><b>メールを送ります (Meeru o okurimasu)</b> - Mengirim email</p>
+        <p><b>日記を書きます (Nikki o kakimasu)</b> - Menulis buku harian</p>
+        <p><b>おやすみなさい (Oyasuminasai)</b> - Selamat tidur</p>
+    `;
+    break;
+
+    case 'situasi':
+    htmlContent = `
+        <h5><b>9. Situasi Makan (食事の会話)</b></h5>
+        <hr>
+        <p><b>いただきます (Itadakimasu)</b> - Selamat makan</p>
+        <p><b>ごちそうさまでした (Gochisousama deshita)</b> - Terima kasih atas makanannya</p>
+        <p><b>おいしいです (Oishii desu)</b> - Enak sekali</p>
+        <p><b>まずいです (Mazui desu)</b> - Tidak enak</p>
+        <p><b>おなかがすきました (Onaka ga sukimashita)</b> - Saya lapar</p>
+        <p><b>のどがかわきました (Nodo ga kawakimashita)</b> - Saya haus</p>
+        <p><b>メニューをください (Menyuu o kudasai)</b> - Tolong berikan menu</p>
+        <p><b>おすすめはなんですか (Osusume wa nan desu ka?)</b> - Apa menu rekomendasinya?</p>
+        <p><b>これをください (Kore o kudasai)</b> - Saya mau ini</p>
+        <p><b>おかいけいをおねがいします (Okaikei o onegaishimasu)</b> - Tolong tagihannya</p>
+        <p><b>いっしょにたべましょう (Issho ni tabemashou)</b> - Mari makan bersama</p>
+        <p><b>おかわりください (Okawari kudasai)</b> - Tolong tambah lagi</p>
+        <p><b>もうすこしください (Mou sukoshi kudasai)</b> - Tolong tambahkan sedikit lagi</p>
+        <p><b>しおをとってください (Shio o totte kudasai)</b> - Tolong ambilkan garam</p>
+        <p><b>さとうをください (Satou o kudasai)</b> - Tolong berikan gula</p>
+        <p><b>おちゃをください (Ocha o kudasai)</b> - Tolong tehnya</p>
+        <p><b>おみずをください (Omizu o kudasai)</b> - Tolong airnya</p>
+        <p><b>いらっしゃいませ (Irasshaimase)</b> - Selamat datang (ucapan pelayan)</p>
+        <p><b>テーブルはありますか (Teeburu wa arimasu ka?)</b> - Apakah ada meja kosong?</p>
+        <p><b>まどぎわのせきをおねがいします (Madogiwa no seki o onegaishimasu)</b> - Tolong kursi dekat jendela</p>
+        <p><b>このりょうりはからいですか (Kono ryouri wa karai desu ka?)</b> - Apakah makanan ini pedas?</p>
+        <p><b>あまいですね (Amai desu ne)</b> - Manis, ya</p>
+        <p><b>すっぱいです (Suppai desu)</b> - Asam</p>
+        <p><b>しょっぱいです (Shoppai desu)</b> - Asin</p>
+        <p><b>にがいです (Nigai desu)</b> - Pahit</p>
+        <p><b>ごはんがすきです (Gohan ga suki desu)</b> - Saya suka nasi</p>
+        <p><b>パンがすきです (Pan ga suki desu)</b> - Saya suka roti</p>
+        <p><b>にくをたべません (Niku o tabemasen)</b> - Saya tidak makan daging</p>
+        <p><b>やさいをたべます (Yasai o tabemasu)</b> - Saya makan sayur</p>
+        <p><b>デザートをください (Dezaato o kudasai)</b> - Tolong berikan pencuci mulut</p>
+        <p><b>コーヒーをください (Koohii o kudasai)</b> - Tolong kopinya</p>
+        <p><b>おかずがすくないです (Okazu ga sukunai desu)</b> - Lauknya sedikit</p>
+        <p><b>おなかいっぱいです (Onaka ippai desu)</b> - Saya kenyang</p>
+        <p><b>もうけっこうです (Mou kekkou desu)</b> - Sudah cukup</p>
+        <p><b>サービスはいいですね (Sābisu wa ii desu ne)</b> - Pelayanannya bagus ya</p>
+        <p><b>サービスがわるいです (Sābisu ga warui desu)</b> - Pelayanannya buruk</p>
+        <p><b>このみせはきれいです (Kono mise wa kirei desu)</b> - Restoran ini bersih</p>
+        <p><b>このみせはやすいです (Kono mise wa yasui desu)</b> - Restoran ini murah</p>
+        <p><b>このみせはたかいです (Kono mise wa takai desu)</b> - Restoran ini mahal</p>
+        <p><b>おさけをのみますか (Osake o nomimasu ka?)</b> - Apakah Anda minum sake?</p>
+        <p><b>かんぱい! (Kanpai!)</b> - Bersulang!</p>
+        <p><b>すききらいがありますか (Suki kirai ga arimasu ka?)</b> - Apakah ada makanan yang tidak disukai?</p>
+        <p><b>ナイフとフォークをください (Naifu to fooku o kudasai)</b> - Tolong pisau dan garpu</p>
+        <p><b>はしをください (Hashi o kudasai)</b> - Tolong sumpitnya</p>
+        <p><b>おさらをください (Osara o kudasai)</b> - Tolong piringnya</p>
+        <p><b>スプーンをください (Supuun o kudasai)</b> - Tolong sendoknya</p>
+        <p><b>たべものをもちかえりできますか (Tabemono o mochikaeri dekimasu ka?)</b> - Bisa dibungkus?</p>
+        <p><b>しょくじをたのしみましょう (Shokuji o tanoshimimashou)</b> - Mari menikmati makanannya</p>
+        <p><b>あついのできをつけてください (Atsui no de ki o tsukete kudasai)</b> - Hati-hati, masih panas</p>
+        <p><b>つめたいです (Tsumetai desu)</b> - Dingin</p>
+        <p><b>このりょうりがすきです (Kono ryouri ga suki desu)</b> - Saya suka makanan ini</p>
+        <p><b>このりょうりはにんきです (Kono ryouri wa ninki desu)</b> - Makanan ini populer</p>
+        <p><b>メニューにないです (Menyuu ni nai desu)</b> - Tidak ada di menu</p>
+        <p><b>けんこうてきなりょうりです (Kenkouteki na ryouri desu)</b> - Makanan yang sehat</p>
+        <p><b>これはなんのりょうりですか (Kore wa nan no ryouri desu ka?)</b> - Ini masakan apa?</p>
+        <p><b>つくりかたをおしえてください (Tsukurikata o oshiete kudasai)</b> - Tolong ajari cara membuatnya</p>
+        <p><b>たべすぎました (Tabesugimashita)</b> - Saya makan terlalu banyak</p>
+        <p><b>ちょっとからすぎます (Chotto karasugimasu)</b> - Sedikit terlalu pedas</p>
+        <p><b>このりょうりはなにでつくりましたか (Kono ryouri wa nani de tsukurimashita ka?)</b> - Masakan ini dibuat dari apa?</p>
+        <p><b>じぶんでつくりました (Jibun de tsukurimashita)</b> - Saya membuatnya sendiri</p>
+        <p><b>テイクアウトできますか (Teikuauto dekimasu ka?)</b> - Bisa dibawa pulang?</p>
+        <p><b>このスープはおいしいです (Kono suupu wa oishii desu)</b> - Sup ini enak</p>
+        <p><b>ごはんをもっとください (Gohan o motto kudasai)</b> - Tolong tambah nasi</p>
+        <p><b>デザートをたのみます (Dezaato o tanomimasu)</b> - Saya pesan pencuci mulut</p>
+        <p><b>まんぞくしました (Manzoku shimashita)</b> - Saya puas</p>
+        <p><b>このりょうりはとてもおいしいです (Kono ryouri wa totemo oishii desu)</b> - Makanan ini sangat enak</p>
+        <p><b>おちゃをもういっぱいください (Ocha o mou ippai kudasai)</b> - Tolong tambahkan satu cangkir teh lagi</p>
+        <p><b>スープがあつすぎます (Suupu ga atsusugimasu)</b> - Supnya terlalu panas</p>
+        <p><b>アイスがとけました (Aisu ga tokemashita)</b> - Esnya sudah meleleh</p>
+        <p><b>おかいけいはどこですか (Okaikei wa doko desu ka?)</b> - Di mana kasirnya?</p>
+        <p><b>このレストランはしずかです (Kono resutoran wa shizuka desu)</b> - Restoran ini tenang</p>
+        <p><b>レストランはどこですか (Resutoran wa doko desu ka?)</b> - Di mana restorannya?</p>
+        <p><b>ごはんをつくっています (Gohan o tsukutteimasu)</b> - Saya sedang memasak</p>
+        <p><b>いましょくじちゅうです (Ima shokujichuu desu)</b> - Saya sedang makan</p>
+        <p><b>ごはんをたべましたか (Gohan o tabemashita ka?)</b> - Sudah makan?</p>
+        <p><b>はい、たべました (Hai, tabemashita)</b> - Ya, sudah</p>
+        <p><b>いいえ、まだです (Iie, mada desu)</b> - Belum</p>
+        <p><b>すごくおいしかったです (Sugoku oishikatta desu)</b> - Tadi enak sekali!</p>
+        <p><b>おなかすいた? (Onaka suita?)</b> - Lapar?</p>
+        <p><b>たべにいきましょう (Tabeni ikimashou)</b> - Ayo pergi makan</p>
+        <p><b>なにをたべたいですか (Nani o tabetai desu ka?)</b> - Mau makan apa?</p>
+        <p><b>なんでもいいです (Nandemo ii desu)</b> - Apa saja boleh</p>
+        <p><b>おべんとうをもっています (Obentou o motteimasu)</b> - Saya bawa bekal</p>
+        <p><b>ごはんできたよ (Gohan dekita yo)</b> - Makanannya sudah siap!</p>
+        <p><b>たべよう! (Tabeyou!)</b> - Yuk makan!</p>
+    `;
+    break;
+
+    case 'belanja':
+        htmlContent = `
+            <h5><b>10. Belanja & Uang (買い物・お金)</b></h5>
+            <hr>
+            <p><b>これ、いくらですか (Kore, ikura desu ka?)</b> - Berapa harga ini?</p>
+            <p><b>やすくできますか (Yasuku dekimasu ka?)</b> - Bisa lebih murah?</p>
+            <p><b>たかいですね (Takai desu ne)</b> - Mahal ya</p>
+            <p><b>やすいですね (Yasui desu ne)</b> - Murah ya</p>
+            <p><b>カードで はらえますか (Kaado de haraemasu ka?)</b> - Bisa bayar pakai kartu?</p>
+            <p><b>げんきんで はらいます (Genkin de haraimasu)</b> - Saya bayar tunai</p>
+            <p><b>レシートをください (Reshiito o kudasai)</b> - Tolong struknya</p>
+            <p><b>これをください (Kore o kudasai)</b> - Saya mau yang ini</p>
+            <p><b>ほかのいろはありますか (Hoka no iro wa arimasu ka?)</b> - Ada warna lain?</p>
+            <p><b>サイズがありますか (Saizu ga arimasu ka?)</b> - Ada ukurannya?</p>
+            <p><b>ちょっとたかいです (Chotto takai desu)</b> - Agak mahal</p>
+            <p><b>ディスカウントはありますか (Disukaunto wa arimasu ka?)</b> - Ada diskon?</p>
+            <p><b>セールですか (Seeru desu ka?)</b> - Lagi obral?</p>
+            <p><b>みせてください (Misete kudasai)</b> - Tolong perlihatkan</p>
+            <p><b>ためしてもいいですか (Tameshite mo ii desu ka?)</b> - Boleh dicoba?</p>
+            <p><b>どこでかえますか (Doko de kaemasu ka?)</b> - Bisa beli di mana?</p>
+            <p><b>これはなんですか (Kore wa nan desu ka?)</b> - Ini apa?</p>
+            <p><b>ほかにありますか (Hoka ni arimasu ka?)</b> - Ada yang lain?</p>
+            <p><b>べつのデザインはありますか (Betsu no dezain wa arimasu ka?)</b> - Ada desain lain?</p>
+            <p><b>しんせんなものはどれですか (Shinsen na mono wa dore desu ka?)</b> - Mana yang segar?</p>
+            <p><b>これはあたらしいですか (Kore wa atarashii desu ka?)</b> - Apakah ini baru?</p>
+            <p><b>ふるいですね (Furui desu ne)</b> - Sudah lama ya</p>
+            <p><b>にせものじゃないですか (Nisemono ja nai desu ka?)</b> - Ini bukan palsu kan?</p>
+            <p><b>このバッグがすきです (Kono baggu ga suki desu)</b> - Saya suka tas ini</p>
+            <p><b>ちょっとかんがえます (Chotto kangaemasu)</b> - Saya pikir-pikir dulu</p>
+            <p><b>またきます (Mata kimasu)</b> - Nanti saya kembali</p>
+            <p><b>これをかいます (Kore o kaimasu)</b> - Saya beli ini</p>
+            <p><b>ぜんぶでいくらですか (Zenbu de ikura desu ka?)</b> - Totalnya berapa?</p>
+            <p><b>おつりをください (Otsuri o kudasai)</b> - Tolong uang kembalian</p>
+            <p><b>おつりがちがいます (Otsuri ga chigaimasu)</b> - Kembaliannya salah</p>
+            <p><b>おかねをわすれました (Okane o wasuremashita)</b> - Saya lupa bawa uang</p>
+            <p><b>クレジットカードはつかえますか (Kurejitto kaado wa tsukaemasu ka?)</b> - Bisa pakai kartu kredit?</p>
+            <p><b>デビットカードでいいですか (Debitto kaado de ii desu ka?)</b> - Boleh debit?</p>
+            <p><b>ポイントカードはありますか (Pointo kaado wa arimasu ka?)</b> - Punya kartu poin?</p>
+            <p><b>ポイントをつけてください (Pointo o tsukete kudasai)</b> - Tolong tambahkan poin</p>
+            <p><b>しはらいはここですか (Shiharai wa koko desu ka?)</b> - Pembayarannya di sini?</p>
+            <p><b>ATMはどこですか (ATM wa doko desu ka?)</b> - ATM di mana?</p>
+            <p><b>おかねをおろします (Okane o oroshimasu)</b> - Saya ambil uang</p>
+            <p><b>りょうがえできますか (Ryougae dekimasu ka?)</b> - Bisa tukar uang?</p>
+            <p><b>ドルをえんにかえたいです (Doru o en ni kaetai desu)</b> - Saya ingin menukar dolar ke yen</p>
+            <p><b>クーポンをつかえますか (Kuupoon o tsukaemasu ka?)</b> - Bisa pakai kupon?</p>
+            <p><b>にせさつではありません (Nisesatsu de wa arimasen)</b> - Ini bukan uang palsu</p>
+            <p><b>しょうひぜいはいくらですか (Shouhizei wa ikura desu ka?)</b> - Pajaknya berapa?</p>
+            <p><b>ぜいこみですか (Zeikomi desu ka?)</b> - Sudah termasuk pajak?</p>
+            <p><b>ぜいべつですか (Zeibetsu desu ka?)</b> - Pajak terpisah?</p>
+            <p><b>おまけをください (Omage o kudasai)</b> - Tolong bonusnya</p>
+            <p><b>バーゲンはいつですか (Baagen wa itsu desu ka?)</b> - Kapan obralnya?</p>
+            <p><b>きゃくたいおうがいいですね (Kyaku taiou ga ii desu ne)</b> - Pelayanannya bagus</p>
+            <p><b>しなものがたりません (Shinamono ga tarimasen)</b> - Barangnya kurang</p>
+            <p><b>しなものがありますか (Shinamono ga arimasu ka?)</b> - Barang ini ada?</p>
+            <p><b>うっていますか (Utteimasu ka?)</b> - Apakah dijual?</p>
+            <p><b>ちょっとたかすぎます (Chotto takasugimasu)</b> - Terlalu mahal</p>
+            <p><b>やすくしてください (Yasuku shite kudasai)</b> - Tolong beri harga murah</p>
+            <p><b>まけてください (Makete kudasai)</b> - Tolong kasih diskon</p>
+            <p><b>これはしんぴんですか (Kore wa shinpin desu ka?)</b> - Ini barang baru?</p>
+            <p><b>これはちゅうこです (Kore wa chuuko desu)</b> - Ini barang bekas</p>
+            <p><b>にんきしょうひんです (Ninki shouhin desu)</b> - Barang populer</p>
+            <p><b>やすいうえにいいひんしつです (Yasui ue ni ii hinshitsu desu)</b> - Murah dan berkualitas</p>
+            <p><b>このみせはどこにありますか (Kono mise wa doko ni arimasu ka?)</b> - Tokonya di mana?</p>
+            <p><b>インターネットでかえますか (Intaanetto de kaemasu ka?)</b> - Bisa beli online?</p>
+            <p><b>へんぴんできますか (Henpin dekimasu ka?)</b> - Bisa dikembalikan?</p>
+            <p><b>かいけいをおねがいします (Kaikei o onegaishimasu)</b> - Tolong hitung totalnya</p>
+            <p><b>はらいすぎました (Haraisugimashita)</b> - Saya bayar kelebihan</p>
+            <p><b>ちょうどです (Choudo desu)</b> - Pas</p>
+            <p><b>これをふくろにいれてください (Kore o fukuro ni irete kudasai)</b> - Tolong masukkan ke dalam kantong</p>
+            <p><b>レジはどこですか (Reji wa doko desu ka?)</b> - Kasir di mana?</p>
+            <p><b>このみせはひろいですね (Kono mise wa hiroi desu ne)</b> - Tokonya luas ya</p>
+            <p><b>このみせはにぎやかです (Kono mise wa nigiyaka desu)</b> - Tokonya ramai</p>
+            <p><b>しなものをさがしています (Shinamono o sagashiteimasu)</b> - Saya sedang mencari barang</p>
+            <p><b>なにをおさがしですか (Nani o osagashi desu ka?)</b> - Sedang mencari apa?</p>
+            <p><b>これはさいしんモデルです (Kore wa saishin moderu desu)</b> - Ini model terbaru</p>
+            <p><b>やすいものをさがしています (Yasui mono o sagashiteimasu)</b> - Saya mencari yang murah</p>
+            <p><b>たくさんかいたいです (Takusan kaitai desu)</b> - Saya ingin beli banyak</p>
+            <p><b>これをプレゼントにしたいです (Kore o purezento ni shitai desu)</b> - Saya ingin jadikan hadiah</p>
+            <p><b>つつんでください (Tsutsunde kudasai)</b> - Tolong bungkus</p>
+            <p><b>ギフトラッピングをおねがいします (Gifuto rappingu o onegaishimasu)</b> - Tolong bungkus kado</p>
+            <p><b>なにかおすすめはありますか (Nanika osusume wa arimasu ka?)</b> - Ada rekomendasi?</p>
+            <p><b>かいものがたのしいです (Kaimono ga tanoshii desu)</b> - Belanja itu menyenangkan</p>
+            <p><b>つかれました (Tsukaremashita)</b> - Saya capek</p>
+            <p><b>ちょっとやすみましょう (Chotto yasumimashou)</b> - Istirahat sebentar yuk</p>
+            <p><b>おかねがたりません (Okane ga tarimasen)</b> - Uang saya tidak cukup</p>
+            <p><b>りょうしゅうしょをください (Ryoushuusho o kudasai)</b> - Tolong kwitansinya</p>
+            <p><b>かごはどこですか (Kago wa doko desu ka?)</b> - Keranjang di mana?</p>
+            <p><b>これをひとつください (Kore o hitotsu kudasai)</b> - Tolong satu ini</p>
+            <p><b>ふたつください (Futatsu kudasai)</b> - Tolong dua</p>
+            <p><b>さんこください (Sanko kudasai)</b> - Tolong tiga</p>
+            <p><b>はらいかたをおしえてください (Haraikata o oshiete kudasai)</b> - Tolong ajari cara pembayarannya</p>
+            <p><b>ありがとうございました (Arigatou gozaimashita)</b> - Terima kasih banyak (ucapan kasir setelah transaksi)</p>
+            <p><b>またおこしください (Mata okoshi kudasai)</b> - Silakan datang lagi</p>
+            <p><b>またきます (Mata kimasu)</b> - Saya akan datang lagi</p>
+        `;
+        break;
+
+        case 'perjalanan':
+    htmlContent = `
+        <h5><b>11. Perjalanan (旅行・交通)</b></h5>
+        <hr>
+        <p><b>りょこうにいきたいです (Ryokou ni ikitai desu)</b> - Saya ingin pergi berlibur</p>
+        <p><b>どこへいきますか (Doko e ikimasu ka?)</b> - Kamu mau ke mana?</p>
+        <p><b>とうきょうへいきます (Toukyou e ikimasu)</b> - Saya akan pergi ke Tokyo</p>
+        <p><b>けいかくをたてています (Keikaku o tateteimasu)</b> - Saya sedang membuat rencana</p>
+        <p><b>チケットをかいました (Chiketto o kaimashita)</b> - Saya sudah membeli tiket</p>
+        <p><b>チケットをとりたいです (Chiketto o toritai desu)</b> - Saya ingin memesan tiket</p>
+        <p><b>いつしゅっぱつしますか (Itsu shuppatsu shimasu ka?)</b> - Kapan berangkat?</p>
+        <p><b>なんじのでんしゃですか (Nanji no densha desu ka?)</b> - Kereta jam berapa?</p>
+        <p><b>バスはどこからでますか (Basu wa doko kara demasu ka?)</b> - Bus berangkat dari mana?</p>
+        <p><b>くうこうへいきたいです (Kuukou e ikitai desu)</b> - Saya ingin pergi ke bandara</p>
+        <p><b>タクシーをよんでください (Takushii o yonde kudasai)</b> - Tolong panggilkan taksi</p>
+        <p><b>ホテルをよやくしました (Hoteru o yoyaku shimashita)</b> - Saya sudah memesan hotel</p>
+        <p><b>ホテルはどこですか (Hoteru wa doko desu ka?)</b> - Hotelnya di mana?</p>
+        <p><b>チェックインをしたいです (Chekkuin o shitai desu)</b> - Saya ingin check-in</p>
+        <p><b>チェックアウトはなんじですか (Chekkuauto wa nanji desu ka?)</b> - Check-out jam berapa?</p>
+        <p><b>パスポートをみせてください (Pasupooto o misete kudasai)</b> - Tolong tunjukkan paspor Anda</p>
+        <p><b>りょかんにとまりたいです (Ryokan ni tomaritai desu)</b> - Saya ingin menginap di penginapan Jepang</p>
+        <p><b>へやをかりたいです (Heya o karitai desu)</b> - Saya ingin menyewa kamar</p>
+        <p><b>シングルルームをおねがいします (Shinguru ruumu o onegaishimasu)</b> - Tolong kamar single</p>
+        <p><b>ツインルームをおねがいします (Tsuin ruumu o onegaishimasu)</b> - Tolong kamar twin</p>
+        <p><b>ふつうしゃでいきます (Futsuusha de ikimasu)</b> - Saya pergi dengan mobil biasa</p>
+        <p><b>レンタカーをかりたいです (Rentakaa o karitai desu)</b> - Saya ingin menyewa mobil</p>
+        <p><b>ガソリンスタンドはどこですか (Gasorin sutando wa doko desu ka?)</b> - Pom bensin di mana?</p>
+        <p><b>どうろがこんでいます (Douro ga kondeimasu)</b> - Jalannya macet</p>
+        <p><b>しんごうをまもってください (Shingou o mamotte kudasai)</b> - Tolong patuhi lampu lalu lintas</p>
+        <p><b>スピードをおとしてください (Supiido o otoshite kudasai)</b> - Tolong kurangi kecepatan</p>
+        <p><b>ナビをつかいます (Nabi o tsukaimasu)</b> - Saya menggunakan GPS</p>
+        <p><b>まっすぐいってください (Massugu itte kudasai)</b> - Silakan jalan lurus</p>
+        <p><b>みぎにまがってください (Migi ni magatte kudasai)</b> - Belok kanan</p>
+        <p><b>ひだりにまがってください (Hidari ni magatte kudasai)</b> - Belok kiri</p>
+        <p><b>ここでとめてください (Koko de tomete kudasai)</b> - Berhenti di sini</p>
+        <p><b>つぎのえきはどこですか (Tsugi no eki wa doko desu ka?)</b> - Stasiun berikutnya di mana?</p>
+        <p><b>でんしゃはなんじにきますか (Densha wa nanji ni kimasu ka?)</b> - Keretanya datang jam berapa?</p>
+        <p><b>バスていはどこですか (Basutei wa doko desu ka?)</b> - Halte bus di mana?</p>
+        <p><b>タクシーのうんてんしゅさん (Takushii no untenshu-san)</b> - Sopir taksi</p>
+        <p><b>このばしょにいってください (Kono basho ni itte kudasai)</b> - Tolong antar ke tempat ini</p>
+        <p><b>じかんどおりにつきました (Jikan doori ni tsukimashita)</b> - Tiba tepat waktu</p>
+        <p><b>まにあいました (Maniaimashita)</b> - Saya sempat tepat waktu</p>
+        <p><b>まにあいませんでした (Maniaimasen deshita)</b> - Saya tidak sempat</p>
+        <p><b>ちこくしました (Chikoku shimashita)</b> - Saya terlambat</p>
+        <p><b>こうくうびんでいきます (Koukuubin de ikimasu)</b> - Saya akan naik pesawat</p>
+        <p><b>くうこうまでどのくらいですか (Kuukou made dono kurai desu ka?)</b> - Berapa jauh ke bandara?</p>
+        <p><b>でんしゃのきっぷをかいたいです (Densha no kippu o kaitai desu)</b> - Saya ingin membeli tiket kereta</p>
+        <p><b>まどがわのせきをおねがいします (Madogawa no seki o onegaishimasu)</b> - Tolong kursi dekat jendela</p>
+        <p><b>まんなかのせきでいいです (Mannaka no seki de ii desu)</b> - Kursi tengah tidak apa-apa</p>
+        <p><b>じかんをまもりましょう (Jikan o mamorimashou)</b> - Mari tepat waktu</p>
+        <p><b>かんこうします (Kankou shimasu)</b> - Saya akan berwisata</p>
+        <p><b>めいしょをまわります (Meisho o mawarimasu)</b> - Mengunjungi tempat terkenal</p>
+        <p><b>しゃしんをとりたいです (Shashin o toritai desu)</b> - Saya ingin mengambil foto</p>
+        <p><b>きねんしゃしんをとりましょう (Kinen shashin o torimashou)</b> - Ayo foto kenangan</p>
+        <p><b>ガイドをおねがいします (Gaido o onegaishimasu)</b> - Tolong pemandunya</p>
+        <p><b>パンフレットはありますか (Panfuretto wa arimasu ka?)</b> - Ada brosur?</p>
+        <p><b>ちずをください (Chizu o kudasai)</b> - Tolong peta</p>
+        <p><b>みちにまよいました (Michi ni mayoimashita)</b> - Saya tersesat</p>
+        <p><b>どういけばいいですか (Dou ikeba ii desu ka?)</b> - Harus lewat mana?</p>
+        <p><b>ここはどこですか (Koko wa doko desu ka?)</b> - Ini di mana?</p>
+        <p><b>たすけてください (Tasukete kudasai)</b> - Tolong saya!</p>
+        <p><b>けいさつをよんでください (Keisatsu o yonde kudasai)</b> - Tolong panggil polisi</p>
+        <p><b>さいふをなくしました (Saifu o nakushimashita)</b> - Saya kehilangan dompet</p>
+        <p><b>パスポートをなくしました (Pasupooto o nakushimashita)</b> - Saya kehilangan paspor</p>
+        <p><b>みちをおしえてください (Michi o oshiete kudasai)</b> - Tolong tunjukkan arah</p>
+        <p><b>えきまでおねがいします (Eki made onegaishimasu)</b> - Tolong antar ke stasiun</p>
+        <p><b>のりかえはどこですか (Norikae wa doko desu ka?)</b> - Ganti kereta di mana?</p>
+        <p><b>でんしゃをまちます (Densha o machimasu)</b> - Saya menunggu kereta</p>
+        <p><b>つぎのバスはなんじですか (Tsugi no basu wa nanji desu ka?)</b> - Bus berikutnya jam berapa?</p>
+        <p><b>じゅうたいしています (Juuttai shiteimasu)</b> - Sedang macet</p>
+        <p><b>こうつうじこがありました (Koutsuu jiko ga arimashita)</b> - Ada kecelakaan lalu lintas</p>
+        <p><b>でんしゃがおくれています (Densha ga okureteimasu)</b> - Keretanya terlambat</p>
+        <p><b>でんしゃがとまりました (Densha ga tomarimashita)</b> - Keretanya berhenti</p>
+        <p><b>きっぷをなくしました (Kippu o nakushimashita)</b> - Saya kehilangan tiket</p>
+        <p><b>しゅっぱつはなんじですか (Shuppatsu wa nanji desu ka?)</b> - Keberangkatan jam berapa?</p>
+        <p><b>とうちゃくはなんじですか (Touchaku wa nanji desu ka?)</b> - Sampainya jam berapa?</p>
+        <p><b>スーツケースがありません (Suutsukeesu ga arimasen)</b> - Koper saya tidak ada</p>
+        <p><b>わすれものをしました (Wasuremono o shimashita)</b> - Saya meninggalkan barang</p>
+        <p><b>ひこうきがとびたちました (Hikouki ga tobitachimashita)</b> - Pesawat sudah lepas landas</p>
+        <p><b>ひこうきがつきました (Hikouki ga tsukimashita)</b> - Pesawat sudah tiba</p>
+        <p><b>ふねでいきます (Fune de ikimasu)</b> - Saya naik kapal</p>
+        <p><b>りょこうはたのしかったです (Ryokou wa tanoshikatta desu)</b> - Perjalanannya menyenangkan</p>
+        <p><b>またりょこうしたいです (Mata ryokou shitai desu)</b> - Saya ingin bepergian lagi</p>
+        <p><b>いいけいけんでした (Ii keiken deshita)</b> - Itu pengalaman yang bagus</p>
+        <p><b>おせわになりました (Osewa ni narimashita)</b> - Terima kasih atas bantuannya selama perjalanan</p>
+        <p><b>またきたいです (Mata kitai desu)</b> - Saya ingin datang lagi</p>
+    `;
+    break;
+
+    case 'kesehatan':
+    htmlContent = `
+        <h5><b>12. Kesehatan (健康)</b></h5>
+        <hr>
+        <p><b>びょういんへいきます (Byouin e ikimasu)</b> - Saya pergi ke rumah sakit</p>
+        <p><b>いしゃをよんでください (Isha o yonde kudasai)</b> - Tolong panggil dokter</p>
+        <p><b>くすりをください (Kusuri o kudasai)</b> - Tolong berikan obat</p>
+        <p><b>あたまがいたいです (Atama ga itai desu)</b> - Kepala saya sakit</p>
+        <p><b>おなかがいたいです (Onaka ga itai desu)</b> - Perut saya sakit</p>
+        <p><b>はながつまっています (Hana ga tsumatteimasu)</b> - Hidung saya tersumbat</p>
+        <p><b>のどがいたいです (Nodo ga itai desu)</b> - Tenggorokan saya sakit</p>
+        <p><b>せきがでます (Seki ga demasu)</b> - Saya batuk</p>
+        <p><b>ねつがあります (Netsu ga arimasu)</b> - Saya demam</p>
+        <p><b>かぜをひきました (Kaze o hikimashita)</b> - Saya masuk angin / flu</p>
+        <p><b>たいちょうがわるいです (Taichou ga warui desu)</b> - Badan saya tidak enak</p>
+        <p><b>めまいがします (Memai ga shimasu)</b> - Saya merasa pusing</p>
+        <p><b>きぶんがわるいです (Kibun ga warui desu)</b> - Saya merasa tidak enak badan</p>
+        <p><b>けがをしました (Kega o shimashita)</b> - Saya terluka</p>
+        <p><b>てにけがをしました (Te ni kega o shimashita)</b> - Tangan saya terluka</p>
+        <p><b>あしをねんざしました (Ashi o nenza shimashita)</b> - Kaki saya terkilir</p>
+        <p><b>はをみがきます (Ha o migakimasu)</b> - Saya menggosok gigi</p>
+        <p><b>しょくよくがありません (Shokuyoku ga arimasen)</b> - Saya tidak punya nafsu makan</p>
+        <p><b>ねむれません (Nemuremasen)</b> - Saya tidak bisa tidur</p>
+        <p><b>ゆっくりやすんでください (Yukkuri yasunde kudasai)</b> - Tolong istirahat dengan baik</p>
+        <p><b>おだいじに (Odaiji ni)</b> - Semoga lekas sembuh</p>
+        <p><b>どこがいたいですか (Doko ga itai desu ka?)</b> - Di mana yang sakit?</p>
+        <p><b>ここがいたいです (Koko ga itai desu)</b> - Sakitnya di sini</p>
+        <p><b>ねつをはかります (Netsu o hakarimasu)</b> - Saya mengukur suhu tubuh</p>
+        <p><b>びょうきになりました (Byouki ni narimashita)</b> - Saya jatuh sakit</p>
+        <p><b>びょうきがなおりました (Byouki ga naorimashita)</b> - Saya sudah sembuh</p>
+        <p><b>しんさつけんをだしてください (Shinsatsuken o dashite kudasai)</b> - Tolong tunjukkan kartu pasien</p>
+        <p><b>けんさをします (Kensa o shimasu)</b> - Akan dilakukan pemeriksaan</p>
+        <p><b>ちをとります (Chi o torimasu)</b> - Akan diambil darah</p>
+        <p><b>レントゲンをとります (Rentogen o torimasu)</b> - Akan dilakukan rontgen</p>
+        <p><b>インフルエンザです (Infuruenza desu)</b> - Ini flu berat (influenza)</p>
+        <p><b>ワクチンをうけました (Wakuchin o ukemashita)</b> - Saya sudah divaksin</p>
+        <p><b>ワクチンをうけたいです (Wakuchin o uketai desu)</b> - Saya ingin vaksin</p>
+        <p><b>アレルギーがあります (Arerugii ga arimasu)</b> - Saya punya alergi</p>
+        <p><b>どんなアレルギーですか (Donna arerugii desu ka?)</b> - Alergi terhadap apa?</p>
+        <p><b>ねつがたかいです (Netsu ga takai desu)</b> - Demam saya tinggi</p>
+        <p><b>はながでます (Hana ga demasu)</b> - Hidung saya meler</p>
+        <p><b>いたみどめをください (Itamidome o kudasai)</b> - Tolong berikan obat pereda nyeri</p>
+        <p><b>このくすりはいつのめばいいですか (Kono kusuri wa itsu nomeba ii desu ka?)</b> - Kapan saya harus minum obat ini?</p>
+        <p><b>まいにちのみます (Mainichi nomimasu)</b> - Saya minum setiap hari</p>
+        <p><b>さんかいのんでください (Sankai nonde kudasai)</b> - Minumlah tiga kali sehari</p>
+        <p><b>しょくごにのんでください (Shokugo ni nonde kudasai)</b> - Minumlah setelah makan</p>
+        <p><b>しょくぜんにのんでください (Shokuzen ni nonde kudasai)</b> - Minumlah sebelum makan</p>
+        <p><b>ねるまえにのんでください (Neru mae ni nonde kudasai)</b> - Minumlah sebelum tidur</p>
+        <p><b>このくすりはねむくなります (Kono kusuri wa nemuku narimasu)</b> - Obat ini menyebabkan kantuk</p>
+        <p><b>おふろにはいってもいいですか (Ofuro ni haitte mo ii desu ka?)</b> - Bolehkah saya mandi?</p>
+        <p><b>しょくじをしてもいいですか (Shokuji o shite mo ii desu ka?)</b> - Bolehkah saya makan?</p>
+        <p><b>やすんでください (Yasunde kudasai)</b> - Silakan istirahat</p>
+        <p><b>ムリをしないでください (Muri o shinaide kudasai)</b> - Jangan memaksakan diri</p>
+        <p><b>からだにきをつけてください (Karada ni ki o tsukete kudasai)</b> - Jaga kesehatan</p>
+        <p><b>てをあらってください (Te o aratte kudasai)</b> - Tolong cuci tangan</p>
+        <p><b>マスクをしてください (Masuku o shite kudasai)</b> - Tolong pakai masker</p>
+        <p><b>うがいをしてください (Uga i o shite kudasai)</b> - Tolong berkumur</p>
+        <p><b>からだがだるいです (Karada ga darui desu)</b> - Tubuh saya lemas</p>
+        <p><b>さむけがします (Samuke ga shimasu)</b> - Saya merasa kedinginan</p>
+        <p><b>あついです (Atsui desu)</b> - Saya merasa panas</p>
+        <p><b>いきをすいます (Iki o suimasu)</b> - Tarik napas</p>
+        <p><b>いきをはきます (Iki o hakimasu)</b> - Hembuskan napas</p>
+        <p><b>しんさつをうけます (Shinsatsu o ukemasu)</b> - Saya akan diperiksa dokter</p>
+        <p><b>しんりょうじかんはなんじですか (Shinryou jikan wa nanji desu ka?)</b> - Jam praktek dokter jam berapa?</p>
+        <p><b>けんこうしんだんをうけました (Kenkou shindan o ukemashita)</b> - Saya sudah menjalani pemeriksaan kesehatan</p>
+        <p><b>けんこうにいいです (Kenkou ni ii desu)</b> - Baik untuk kesehatan</p>
+        <p><b>すいみんじかんがみじかいです (Suimin jikan ga mijikai desu)</b> - Waktu tidur saya kurang</p>
+        <p><b>ストレスがあります (Sutoresu ga arimasu)</b> - Saya sedang stres</p>
+        <p><b>リラックスしたいです (Rirakkusu shitai desu)</b> - Saya ingin bersantai</p>
+        <p><b>うんどうをします (Undou o shimasu)</b> - Saya berolahraga</p>
+        <p><b>さんぽをします (Sanpo o shimasu)</b> - Saya jalan-jalan</p>
+        <p><b>すいえいをします (Suiei o shimasu)</b> - Saya berenang</p>
+        <p><b>やさいをたくさんたべます (Yasai o takusan tabemasu)</b> - Saya makan banyak sayur</p>
+        <p><b>みずをたくさんのみます (Mizu o takusan nomimasu)</b> - Saya minum banyak air</p>
+        <p><b>けんこうてきなせいかつをしています (Kenkouteki na seikatsu o shiteimasu)</b> - Saya menjalani gaya hidup sehat</p>
+        <p><b>タバコをすいません (Tabako o suimasen)</b> - Saya tidak merokok</p>
+        <p><b>おさけをのみません (Osake o nomimasen)</b> - Saya tidak minum alkohol</p>
+        <p><b>けんこうがいちばんです (Kenkou ga ichiban desu)</b> - Kesehatan adalah yang utama</p>
+        <p><b>いたいです (Itai desu)</b> - Sakit!</p>
+        <p><b>いたくないです (Itakunai desu)</b> - Tidak sakit</p>
+        <p><b>ドクターをよんでください (Dokutaa o yonde kudasai)</b> - Tolong panggil dokter</p>
+        <p><b>たすけてください (Tasukete kudasai)</b> - Tolong saya!</p>
+        <p><b>しょうどくしてください (Shoudoku shite kudasai)</b> - Tolong disterilkan</p>
+        <p><b>ばんそうこうをください (Bansoukou o kudasai)</b> - Tolong plester luka</p>
+        <p><b>げんきになりました (Genki ni narimashita)</b> - Saya sudah sehat kembali</p>
+        <p><b>だいじょうぶですか (Daijoubu desu ka?)</b> - Apakah kamu baik-baik saja?</p>
+        <p><b>だいじょうぶです (Daijoubu desu)</b> - Saya baik-baik saja</p>
+        <p><b>いたみますか (Itamimasu ka?)</b> - Apakah sakit?</p>
+        <p><b>いたみません (Itamimasen)</b> - Tidak sakit</p>
+        <p><b>おなかがすきましたか (Onaka ga sukimashita ka?)</b> - Apakah kamu lapar?</p>
+        <p><b>すこしやすみましょう (Sukoshi yasumimashou)</b> - Mari istirahat sebentar</p>
+        <p><b>けんこうにきをつけましょう (Kenkou ni ki o tsukemashou)</b> - Mari jaga kesehatan</p>
+        <p><b>はをみてもらいます (Ha o mite moraimasu)</b> - Gigi saya diperiksa</p>
+        <p><b>めがいたいです (Me ga itai desu)</b> - Mata saya sakit</p>
+        <p><b>みみがいたいです (Mimi ga itai desu)</b> - Telinga saya sakit</p>
+        <p><b>けんこうしんだんのけっかをまっています (Kenkou shindan no kekka o matteimasu)</b> - Saya menunggu hasil pemeriksaan</p>
+    `;
+    break;
+
+    
+    }
+
+    // 4. Tampilkan konten di dalam div
+    contentDiv.innerHTML = htmlContent;
+    contentDiv.style.display = 'block'; // Tampilkan kontainer konten
+}
 
 function showLatihanMenu() {
     const content = document.getElementById('content');
